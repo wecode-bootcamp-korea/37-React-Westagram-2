@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+//Nav
+import Nav from "./components/Nav/Nav";
+
 // 주혜린의 컴포넌트
 import LoginJoo from "./pages/joohyerin/Login/Login";
 import MainJoo from "./pages/joohyerin/Main/Main";
@@ -22,6 +25,8 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Nav />} />
+
         <Route path="/login-joo" element={<LoginJoo />} />
         <Route path="/main-joo" element={<MainJoo />} />
 
