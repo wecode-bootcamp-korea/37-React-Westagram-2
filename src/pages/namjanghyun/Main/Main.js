@@ -1,6 +1,54 @@
+import React, { useState } from "react";
 import "./main.scss";
 
 function Main() {
+  const [commentInputValue, setCommentValue] = useState("");
+  const [commentArray, setcommentArray] = useState([]);
+
+  const clear = () => {
+    setCommentValue("");
+  };
+
+  const saveComment = (event) => {
+    // console.log(event.target.value);
+    setCommentValue(event.target.value);
+    // console.log(typeof setCommentValue);
+  };
+
+  const createArray = (event) => {
+    event.preventDefault();
+    setcommentArray((prevList) => [...prevList, commentInputValue]);
+    // console.log(commentInputValue, commentArray);
+    ViewComment();
+    clear();
+  };
+
+  function ViewComment() {
+    let commentList = commentArray.map((elements, index) => {
+      return (
+        <li key={index}>
+          {" "}
+          {/* 최상단에 key를 추가하면... 에러가 없다. 왜죠?? */}
+          <div className="feedWrap">
+            <span id="feedId">canon_mj</span>
+            <span id="feed">{elements}</span>
+            <span id="feedMore">더 보기</span>
+          </div>
+          <div className="feedIconWrap">
+            <span className="trashIcon">
+              <i className="fa-regular fa-trash-can" />
+            </span>
+            <span className="heartIcon">
+              <i className="fa-regular fa-heart" />
+            </span>
+          </div>
+        </li>
+      );
+    });
+
+    return commentList;
+  }
+
   return (
     <div className="containerWrapperMain">
       <header className="header">
@@ -70,15 +118,23 @@ function Main() {
               </div>
 
               <div className="feedboxWrap">
-                <ul className="feedBox" />
+                <ul className="feedBox">
+                  <ViewComment />
+                </ul>
               </div>
 
               <div className="feedTimeBox">
                 <span className="feedTime">45분 전</span>
               </div>
 
-              <form className="feedInputBox">
-                <input type="text" id="feedInput" placeholder="댓글 달기..." />
+              <form onSubmit={createArray} className="feedInputBox">
+                <input
+                  type="text"
+                  id="feedInput"
+                  value={commentInputValue}
+                  onChange={saveComment}
+                  placeholder="댓글 달기..."
+                />
                 <button type="submit" id="submitButton">
                   게시
                 </button>
