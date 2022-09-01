@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Main/Main.scss";
 
 const MainJoo = () => {
+  const [chat, setChat] = useState("");
+  const changeChat = (event) => {
+    setChat(event.target.value);
+  };
+  const [chatList, setChatList] = useState([]);
+  const saveChat = (event) => {
+    event.preventDefault();
+    setChatList([...chatList, chat]);
+    setChat("");
+  };
+  console.log(chatList);
+
   return (
     <div className="main">
       <header>
@@ -171,7 +183,25 @@ const MainJoo = () => {
 
               <p className="text-like">좋아요 120개</p>
 
-              <div className="box-comment" />
+              <div className="box-comment">
+                {chatList.map((value, index) => {
+                  return (
+                    <div key={index}>
+                      <p className="text-comment">{value}</p>
+                      <img
+                        className="img-heart-comment"
+                        src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/heart.png`}
+                        alt="좋아요 아이콘"
+                      />
+                      <img
+                        className="img-delete-comment"
+                        src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/delete.png`}
+                        alt="삭제 아이콘"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
 
               <div className="box-chat">
                 <img
@@ -181,11 +211,15 @@ const MainJoo = () => {
                 />
                 <form>
                   <input
+                    value={chat}
+                    onChange={changeChat}
                     className="input-chat"
                     type="text"
                     placeholder="댓글 달기..."
                   />
-                  <button className="btn-chat">게시</button>
+                  <button onClick={saveChat} className="btn-chat">
+                    게시
+                  </button>
                 </form>
               </div>
             </article>
