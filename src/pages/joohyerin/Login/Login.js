@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Login/Login.scss";
 import { useNavigate } from "react-router-dom";
 
 const LoginJoo = () => {
   const navigate = useNavigate();
+  const [userId, setUserId] = useState("");
+  const [userPw, setUserPw] = useState("");
+  const saveUserId = (event) => {
+    setUserId(event.target.value);
+  };
+  const saveUserPw = (event) => {
+    setUserPw(event.target.value);
+  };
 
   return (
     <div className="login">
@@ -11,11 +19,19 @@ const LoginJoo = () => {
         <h1 className="text-title">Westagram</h1>
         <form className="form-login">
           <input
+            onChange={saveUserId}
+            value={userId}
             id="input-id"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
-          <input id="input-pw" type="password" placeholder="비밀번호" />
+          <input
+            onChange={saveUserPw}
+            value={userPw}
+            id="input-pw"
+            type="password"
+            placeholder="비밀번호"
+          />
           <button
             onClick={() => {
               navigate("/main");
