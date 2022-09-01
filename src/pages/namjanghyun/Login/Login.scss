@@ -1,0 +1,159 @@
+@import "https://fonts.googleapis.com/css?family=Lobster";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+a,
+input,
+button {
+  all: unset;
+}
+
+body {
+  line-height: 1.5;
+}
+
+.containerWrapperLogin {
+  width: 100%;
+  height: 100vh;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerWrapper::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.containerWrapperLogin {
+  .loginBox {
+    width: 660px;
+    height: auto;
+    margin: 0 auto;
+    border: 2px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #fff;
+
+    .titleWrap {
+      width: 100%;
+      height: auto;
+      padding: 30px 0;
+      text-align: center;
+
+      h1 {
+        font-size: 71px;
+        font-weight: 400;
+        font-family: "Lobster", cursive;
+      }
+    }
+
+    .loginWrap {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      input {
+        width: 400px;
+        height: 40px;
+        margin: 10px 0;
+        padding: 10px 20px;
+        font-size: 21px;
+        color: #000;
+        border: 2px solid #e6e6e6;
+        border-radius: 5px;
+        background: #fafafa;
+
+        &::placeholder {
+          color: #9a9a9a;
+          transition: all 0.3s;
+        }
+
+        &:focus::placeholder {
+          color: transparent;
+          transition: all 0.3s;
+        }
+      }
+
+      button {
+        width: 400px;
+        height: 44px;
+        margin: 15px 0;
+        padding: 5px 20px;
+        font-size: 21px;
+        font-weight: 700;
+        color: #fff;
+        border-radius: 5px;
+        background: #2495ff;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:disabled,
+        &[disabled] {
+          color: #eee;
+          background: #c4e0fb;
+          transition: all 0.3s;
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  .textWrap {
+    height: 150px;
+    text-align: center;
+    margin: 10px 0;
+    display: flex;
+    align-items: flex-end;
+
+    a {
+      width: 100%;
+      margin: 30px 0;
+      font-size: 21px;
+      color: #063c6d;
+      cursor: pointer;
+
+      i {
+        color: #063c6d;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .containerWrapperLogin .loginBox {
+    width: 340px;
+
+    .titleWrap h1 {
+      font-size: 51px;
+    }
+
+    .loginWrap {
+      flex-wrap: nowrap;
+
+      input {
+        width: 260px;
+        font-size: 17px;
+      }
+
+      button {
+        width: 260px;
+      }
+    }
+  }
+}
