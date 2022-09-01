@@ -39,19 +39,21 @@ function Login() {
               value={pwInputValue}
               onChange={saveUserPw}
             />
-            {/* 
-            <Link to="/main">
-                <button type="submit" disabled id="loginBtn">
-                    로그인
-                </button>
-            </Link> 
-            */}
+            {/* <Link to="/main">
+                        <button type="submit" disabled={idInputValue.indexOf('@') >= 0 && (pwInputValue.length >= 5) ? "" : "disabled"} id="loginBtn">
+                           로그인
+                        </button>
+                    </Link> */}
             <button
               onClick={() => {
                 navigate("/main");
               }}
               type="submit"
-              disabled
+              disabled={
+                idInputValue.indexOf("@") >= 0 && pwInputValue.length >= 5
+                  ? ""
+                  : "disabled"
+              }
               className="loginBtn"
             >
               로그인
