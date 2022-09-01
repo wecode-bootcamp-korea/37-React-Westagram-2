@@ -12,6 +12,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+input:focus {
+  outline: none;
+}
 
 .main {
   background: #fafafa;
@@ -48,9 +51,7 @@ main {
     font-size: 16px;
     font-weight: lighter;
   }
-  input:focus {
-    outline: none;
-  }
+
   .img-explore {
     position: absolute;
     top: 9px;
