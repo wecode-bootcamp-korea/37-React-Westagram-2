@@ -6,11 +6,17 @@ const LoginJoo = () => {
   const navigate = useNavigate();
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
+  const [disabled, setDisabled] = useState(true);
   const saveUserId = (event) => {
     setUserId(event.target.value);
   };
   const saveUserPw = (event) => {
     setUserPw(event.target.value);
+  };
+  const handleDisabled = () => {
+    if (userId.includes("@") && userPw.length > 0) {
+      setDisabled(false);
+    }
   };
 
   return (
@@ -20,6 +26,7 @@ const LoginJoo = () => {
         <form className="form-login">
           <input
             onChange={saveUserId}
+            onKeyUp={handleDisabled}
             value={userId}
             id="input-id"
             type="text"
@@ -27,20 +34,47 @@ const LoginJoo = () => {
           />
           <input
             onChange={saveUserPw}
+            onKeyUp={handleDisabled}
             value={userPw}
             id="input-pw"
             type="password"
             placeholder="비밀번호"
           />
-          <button
+          {disabled === true ? (
+            <button
+              disabled={disabled}
+              onClick={() => {
+                navigate("/main-joo");
+              }}
+              id="btn-login"
+              type="submit"
+            >
+              로그인
+            </button>
+          ) : (
+            <button
+              style={{ backgroundColor: "rgb(0, 149, 246, 1)" }}
+              className="btn-hoverEffect"
+              disabled={disabled}
+              onClick={() => {
+                navigate("/main-joo");
+              }}
+              id="btn-login"
+              type="submit"
+            >
+              로그인
+            </button>
+          )}
+          {/* <button
+            disabled={disabled}
             onClick={() => {
-              navigate("/main");
+              navigate("/main-joo");
             }}
             id="btn-login"
             type="submit"
           >
             로그인
-          </button>
+          </button> */}
         </form>
         <p className="message-emailError">*이메일 형식을 다시 확인해주세요.</p>
         <p className="message-pwError">
