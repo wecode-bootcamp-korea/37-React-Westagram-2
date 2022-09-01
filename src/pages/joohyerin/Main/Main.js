@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Main/Main.scss";
 
 const MainJoo = () => {
+  let [id, setId] = useState(0);
   const [chat, setChat] = useState("");
   const changeChat = (event) => {
     setChat(event.target.value);
@@ -9,10 +10,10 @@ const MainJoo = () => {
   const [chatList, setChatList] = useState([]);
   const saveChat = (event) => {
     event.preventDefault();
-    setChatList([...chatList, chat]);
+    setId((id += 1));
+    setChatList([...chatList, { id: id, content: chat }]);
     setChat("");
   };
-  console.log(chatList);
 
   return (
     <div className="main">
@@ -184,10 +185,10 @@ const MainJoo = () => {
               <p className="text-like">좋아요 120개</p>
 
               <div className="box-comment">
-                {chatList.map((value, index) => {
+                {chatList.map((value) => {
                   return (
-                    <div key={index}>
-                      <p className="text-comment">{value}</p>
+                    <div key={value.id}>
+                      <p className="text-comment">{value.content}</p>
                       <img
                         className="img-heart-comment"
                         src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/heart.png`}
