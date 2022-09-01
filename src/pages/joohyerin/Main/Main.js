@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Comment from "./Comment";
 import "../Main/Main.scss";
 
 const MainJoo = () => {
@@ -185,23 +186,9 @@ const MainJoo = () => {
               <p className="text-like">좋아요 120개</p>
 
               <div className="box-comment">
-                {chatList.map((value) => {
-                  return (
-                    <div key={value.id}>
-                      <p className="text-comment">{value.content}</p>
-                      <img
-                        className="img-heart-comment"
-                        src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/heart.png`}
-                        alt="좋아요 아이콘"
-                      />
-                      <img
-                        className="img-delete-comment"
-                        src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/delete.png`}
-                        alt="삭제 아이콘"
-                      />
-                    </div>
-                  );
-                })}
+                {chatList.map((value) => (
+                  <Comment key={value.id} content={value.content} />
+                ))}
               </div>
 
               <div className="box-chat">
