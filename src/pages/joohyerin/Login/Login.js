@@ -14,7 +14,7 @@ const LoginJoo = () => {
     setUserPw(event.target.value);
   };
   const handleDisabled = () => {
-    if (userId.includes("@") && userPw.length > 0) {
+    if (userId.includes("@") && userPw.length > 4) {
       setDisabled(false);
     }
   };
