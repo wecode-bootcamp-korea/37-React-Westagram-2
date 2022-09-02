@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./login.scss";
 import { useNavigate } from "react-router-dom";
+import "./Login.scss";
 
 function Login() {
   const navigate = useNavigate(); // 이동
@@ -40,7 +40,7 @@ function Login() {
             />
             <button
               onClick={() => {
-                navigate("/main");
+                navigate("/main-nam");
               }}
               type="submit"
               disabled={

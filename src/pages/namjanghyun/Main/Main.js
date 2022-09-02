@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import "./main.scss";
+import "./Main.scss";
+import Header from "./components/Header";
+import Feeds from "./components/Feeds";
 
 function Main() {
   const [commentInputValue, setCommentValue] = useState("");
-  const [commentArray, setcommentArray] = useState([]);
+  const [commentArray, setCommentArray] = useState([]);
 
   const clear = () => {
     setCommentValue("");
@@ -17,7 +19,7 @@ function Main() {
 
   const createArray = (event) => {
     event.preventDefault();
-    setcommentArray((prevList) => [...prevList, commentInputValue]);
+    setCommentArray((prevList) => [...prevList, commentInputValue]);
     // console.log(commentInputValue, commentArray);
     ViewComment();
     clear();
@@ -27,8 +29,6 @@ function Main() {
     let commentList = commentArray.map((elements, index) => {
       return (
         <li key={index}>
-          {" "}
-          {/* 최상단에 key를 추가하면... 에러가 없다. 왜죠?? */}
           <div className="feedWrap">
             <span id="feedId">canon_mj</span>
             <span id="feed">{elements}</span>
@@ -51,96 +51,15 @@ function Main() {
 
   return (
     <div className="containerWrapperMain">
-      <header className="header">
-        <nav className="navigation">
-          <div className="logo">
-            <i className="fa-brands fa-instagram" />
-            <h1>Westagram</h1>
-          </div>
-          <div className="searchBox">
-            <input type="text" className="searchInput" placeholder="검색" />
-          </div>
-          <div className="navIconBox">
-            <i className="fa-regular fa-compass" />
-            <i className="fa-regular fa-heart" />
-            <i className="fa-regular fa-user" />
-          </div>
-        </nav>
-      </header>
-
+      <Header />
       <main className="main">
         <div className="mainWrap">
-          <div className="feeds">
-            <article>
-              <div className="topSection">
-                <div className="profileInfo">
-                  <div className="profileImgBox">
-                    <img
-                      src="/images/namjanghyun/profile_img.png"
-                      alt="profile"
-                    />
-                  </div>
-                  <div className="profileTextBox">
-                    <span>wecode</span>
-                  </div>
-                </div>
-                <div className="profileMore">
-                  <i className="fa-solid fa-ellipsis" />
-                </div>
-              </div>
-
-              <div className="imageSection">
-                <img src="/images/namjanghyun/feed_img.jpg" alt="Bag" />
-              </div>
-
-              <div className="likeSection">
-                <div className="iconBoxWrap iconBoxWrap1">
-                  <div className="iconBox">
-                    <i className="fa-solid fa-heart" />
-                    <i className="fa-regular fa-comment" />
-                    <i className="fa-solid fa-arrow-up-from-bracket" />
-                  </div>
-                </div>
-
-                <div className="iconBoxWrap iconBoxWrap2">
-                  <div className="iconBox">
-                    <i className="fa-regular fa-bookmark" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="feedId">
-                <img src="/images/namjanghyun/profile_img.png" alt="profile" />
-                <div>
-                  <span>aineworl</span>
-                  <span>님 외 10명이 좋아합니다</span>
-                </div>
-              </div>
-
-              <div className="feedboxWrap">
-                <ul className="feedBox">
-                  <ViewComment />
-                </ul>
-              </div>
-
-              <div className="feedTimeBox">
-                <span className="feedTime">45분 전</span>
-              </div>
-
-              <form onSubmit={createArray} className="feedInputBox">
-                <input
-                  type="text"
-                  id="feedInput"
-                  value={commentInputValue}
-                  onChange={saveComment}
-                  placeholder="댓글 달기..."
-                />
-                <button type="submit" id="submitButton">
-                  게시
-                </button>
-              </form>
-            </article>
-          </div>
+          <Feeds
+            commentInputValue={commentInputValue}
+            saveComment={saveComment}
+            createArray={createArray}
+            ViewComment={ViewComment}
+          />
 
           <div className="main-right">
             <div className="userInfo">
