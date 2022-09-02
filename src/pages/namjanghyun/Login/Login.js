@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./login.scss";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -39,11 +38,6 @@ function Login() {
               value={pwInputValue}
               onChange={saveUserPw}
             />
-            {/* <Link to="/main">
-                        <button type="submit" disabled={idInputValue.indexOf('@') >= 0 && (pwInputValue.length >= 5) ? "" : "disabled"} id="loginBtn">
-                           로그인
-                        </button>
-                    </Link> */}
             <button
               onClick={() => {
                 navigate("/main");
@@ -60,9 +54,7 @@ function Login() {
             </button>
           </form>
           <div className="textWrap">
-            <a href="#">
-              비밀번호를 잊으셨나요 <i className="fa-solid fa-question" />
-            </a>
+            비밀번호를 잊으셨나요 <i className="fa-solid fa-question" />
           </div>
         </div>
       </main>

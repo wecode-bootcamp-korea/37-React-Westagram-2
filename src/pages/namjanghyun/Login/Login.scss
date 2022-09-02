@@ -118,8 +118,12 @@ body {
     height: 150px;
     text-align: center;
     margin: 10px 0;
+    font-size: 21px;
+    color: #063c6d;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
     a {
       width: 100%;
