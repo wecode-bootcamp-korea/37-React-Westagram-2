@@ -1,16 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 
 function LoginLee() {
-  let [userId, SetUserId] = useState("");
-  let [userPassWord, setUserPassWord] = useState("");
+  const navigate = useNavigate();
+  const [userId, SetUserId] = useState("");
+  const [userPassWord, setUserPassWord] = useState("");
+  const [loginButton, setloginButton] = useState(false);
+
   const onChangeId = (event) => {
     SetUserId(event.target.value);
+    userId.includes("@") && userPassWord.length > 4
+      ? setloginButton(true)
+      : setloginButton(false);
   };
+  // console.log("id =", userId);
 
   const onChangePassWord = (event) => {
     setUserPassWord(event.target.value);
+
+    userId.includes("@") && userPassWord.length > 4
+      ? setloginButton(true)
+      : setloginButton(false);
   };
+  // console.log("pw =", userPassWord);
 
   return (
     <div className="loginWrapper">
@@ -19,21 +32,25 @@ function LoginLee() {
         <input
           placeholder="전화번호, 사용자 이름 또는 이메일"
           type="text"
-          disabled=""
           value={userId}
           onChange={onChangeId}
         />
         <input
           placeholder="비밀번호"
           type="password"
-          disabled=""
           value={userPassWord}
           onChange={onChangePassWord}
         />
-        <button type="button" disabled="">
+        <button
+          type="button"
+          className={loginButton ? "on-button" : "off-button"}
+          onClick={() => {
+            return loginButton ? navigate("../Main/MainLee") : null;
+          }}
+        >
           로그인
         </button>
-        <a href="https://www.naver.com">비밀번호를 잊으셨나요?</a>
+        <a href="www.naver.com">비밀번호를 잊으셨나요?</a>
       </div>
     </div>
   );

@@ -36,11 +36,18 @@
     padding: 20px 0;
     font-size: 16px;
     color: white;
-    background-color: #0e71e1;
   }
 
   a {
     margin-top: 180px;
     text-decoration: none;
   }
+}
+
+.on-button {
+  background-color: #0e71e1;
+}
+
+.off-button {
+  background-color: lightblue;
 }
