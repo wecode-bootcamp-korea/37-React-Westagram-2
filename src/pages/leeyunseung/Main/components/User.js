@@ -2,12 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./User.scss";
 
-// img (있을수도 있고 없을수도 있다.) => undefined, null
-// description (있을수도 있고 없을수도 있다.)
-// followLink (있을수도 있고 없을수도 있다.)
-
-// function User(props) {}
-// props => { ... } => {children, ...}
 function User({
   username,
   img = "/images/Leeyunseung/mypage.png",
