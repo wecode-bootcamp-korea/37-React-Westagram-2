@@ -6,21 +6,18 @@ import Article from "../Main/components/Article";
 import User from "./components/User";
 
 function MainLee() {
-  const mainUser = [
-    {
-      username: "yunseung_lee",
-      img: "/images/Leeyunseung/dog.png",
-    },
-  ];
+  const { username, img } = {
+    username: "yunseung_lee",
+    img: "/images/Leeyunseung/dog.png",
+  };
+
   return (
     <div>
       <Nav />
       <div className="main">
         <div className="feeds">
           <Article>
-            {mainUser.map(({ username, img }, idx) => (
-              <User key={`${username}-${idx}`} img={img} username={username} />
-            ))}
+            <User img={img} username={username} />
           </Article>
         </div>
         <Aside />

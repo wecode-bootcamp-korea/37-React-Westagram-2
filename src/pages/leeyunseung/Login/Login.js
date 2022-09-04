@@ -45,7 +45,7 @@ function LoginLee() {
           type="button"
           className={loginButton ? "on-button" : "off-button"}
           onClick={() => {
-            return loginButton ? navigate("../Main/MainLee") : null;
+            return loginButton ? navigate("../Main-lee") : null;
           }}
         >
           로그인

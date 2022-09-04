@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Article.scss";
 
 function Article({ children }) {
+  const [comment, setComment] = useState("");
+
+  const inputComment = (e) => {
+    setComment(e.target.value);
+  };
+
+  const [commentList, setCommentList] = useState([]);
+
+  const makeComment = (e) => {
+    e.preventDefault();
+    setCommentList([...commentList, comment]);
+    setComment("");
+  };
+
+  const inputKeyUp = (e) => {
+    if (e.key === "Enter" && e.target.value.length > 0) {
+      e.preventDefault();
+      setCommentList([...commentList, comment]);
+      setComment("");
+    }
+  };
+
   return (
     <div className="article">
       {children}
@@ -21,16 +43,36 @@ function Article({ children }) {
         <p>aineword님 외 10명이 좋아합니다</p>
       </div>
       <ul className="comment-container">
-        <li> 여기에 댓글이 들어갑니다</li>
-        <li> 여기에 댓글이 들어갑니다</li>
+        {commentList.map((value, idx) => {
+          return (
+            <li key={idx}>
+              <p>{value}</p>
+              <div className="comment-icon-container">
+                <img
+                  className="comment-like-icon"
+                  src="/images/Leeyunseung/heart.png"
+                  alt="comment-like-icon"
+                />
+                <img
+                  className="comment-delete-icon"
+                  src="/images/Leeyunseung/x.png"
+                  alt="comment-delete-icon"
+                />
+              </div>
+            </li>
+          );
+        })}
       </ul>
       <div className="comment-input-container">
         <input
+          value={comment}
+          onChange={inputComment}
           className="commnet-input"
           type="text"
           placeholder="댓글 달기..."
+          onKeyPress={inputKeyUp}
         />
-        <button className="commnet-button" type="submit">
+        <button className="commnet-button" onClick={makeComment}>
           게시
         </button>
       </div>
