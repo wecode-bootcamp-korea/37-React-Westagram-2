@@ -2,7 +2,7 @@ import "./Comment.scss";
 
 function Comment({ content }) {
   return (
-    <li>
+    <li className="comment-list">
       <p>{content}</p>
       <div className="comment-icon-container">
         <img
