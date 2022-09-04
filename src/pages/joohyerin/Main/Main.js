@@ -22,6 +22,9 @@ const MainJoo = () => {
       e.target.className = "img-heart-comment";
     }
   };
+  const deleteChat = (e) => {
+    e.target.parentNode.remove();
+  };
 
   return (
     <div className="main">
@@ -198,6 +201,7 @@ const MainJoo = () => {
                     key={value.id}
                     content={value.content}
                     changeHeartImg={changeHeartImg}
+                    deleteChat={deleteChat}
                   />
                 ))}
               </div>
