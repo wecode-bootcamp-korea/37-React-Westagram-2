@@ -26,7 +26,7 @@ function LoginLee() {
   // console.log("pw =", userPassWord);
 
   return (
-    <div className="loginWrapper">
+    <div className="login-wrapper">
       <div>
         <h1>Westargram</h1>
         <input

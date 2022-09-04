@@ -1,7 +1,7 @@
 @import "/src/styles/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
-.loginWrapper {
+.login-wrapper {
   @include flexCenter;
   height: 100vh;
   background-color: #f9f9f9;
