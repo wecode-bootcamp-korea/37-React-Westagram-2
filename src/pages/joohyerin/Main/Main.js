@@ -11,9 +11,16 @@ const MainJoo = () => {
   const [chatList, setChatList] = useState([]);
   const saveChat = (event) => {
     event.preventDefault();
-    setId((id += 1));
+    setId((prev) => prev + 1);
     setChatList([...chatList, { id: id, content: chat }]);
     setChat("");
+  };
+  const changeHeartImg = (e) => {
+    if (e.target.className === "img-heart-comment") {
+      e.target.className = "img-fullHeart-comment";
+    } else {
+      e.target.className = "img-heart-comment";
+    }
   };
 
   return (
@@ -187,7 +194,11 @@ const MainJoo = () => {
 
               <div className="box-comment">
                 {chatList.map((value) => (
-                  <Comment key={value.id} content={value.content} />
+                  <Comment
+                    key={value.id}
+                    content={value.content}
+                    changeHeartImg={changeHeartImg}
+                  />
                 ))}
               </div>
 
