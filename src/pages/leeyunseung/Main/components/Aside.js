@@ -1,55 +1,8 @@
 import React from "react";
-import "./Aside.scss";
 import User from "./User";
-function Aside() {
-  const storyUserList = [
-    {
-      username: "_ymm_s",
-      img: "/images/Leeyunseung/mypage.png",
-      description: "16분 전",
-    },
-    {
-      username: "drink_eat_drink",
-      img: "/images/Leeyunseung/mypage.png",
-      description: "3시간 전",
-    },
-    {
-      username: "jimlkkkkk",
-      img: "/images/Leeyunseung/mypage.png",
-      description: "1일 전",
-    },
-    {
-      username: "hohohohohoho",
-      img: "/images/Leeyunseung/mypage.png",
-      description: "2일 전",
-    },
-    {
-      username: "azdf_34",
-      img: "/images/Leeyunseung/mypage.png",
-      description: "일주일 전",
-    },
-  ];
+import "./Aside.scss";
 
-  const userList = [
-    {
-      username: "joaaaaa",
-      img: "/images/Leeyunseung/mypage.png",
-      description: "_legend_a님 외 2명이 좋아합니다.",
-      followLink: "#",
-    },
-    {
-      username: "nabbaaaaa",
-      img: "/images/Leeyunseung/mypage.png",
-      description: "Kkyem님이 좋아합니다.",
-      followLink: "#",
-    },
-    {
-      username: "wekkkkkk",
-      img: "/images/Leeyunseung/mypage.png",
-      description: "oo님이 좋아합니다.",
-      followLink: "#",
-    },
-  ];
+function Aside() {
   return (
     <div className="aside">
       <header>
@@ -99,3 +52,52 @@ function Aside() {
   );
 }
 export default Aside;
+
+const storyUserList = [
+  {
+    username: "_ymm_s",
+    img: "/images/Leeyunseung/mypage.png",
+    description: "16분 전",
+  },
+  {
+    username: "drink_eat_drink",
+    img: "/images/Leeyunseung/mypage.png",
+    description: "3시간 전",
+  },
+  {
+    username: "jimlkkkkk",
+    img: "/images/Leeyunseung/mypage.png",
+    description: "1일 전",
+  },
+  {
+    username: "hohohohohoho",
+    img: "/images/Leeyunseung/mypage.png",
+    description: "2일 전",
+  },
+  {
+    username: "azdf_34",
+    img: "/images/Leeyunseung/mypage.png",
+    description: "일주일 전",
+  },
+];
+
+const userList = [
+  {
+    username: "joaaaaa",
+    img: "/images/Leeyunseung/mypage.png",
+    description: "_legend_a님 외 2명이 좋아합니다.",
+    followLink: "#",
+  },
+  {
+    username: "nabbaaaaa",
+    img: "/images/Leeyunseung/mypage.png",
+    description: "Kkyem님이 좋아합니다.",
+    followLink: "#",
+  },
+  {
+    username: "wekkkkkk",
+    img: "/images/Leeyunseung/mypage.png",
+    description: "oo님이 좋아합니다.",
+    followLink: "#",
+  },
+];

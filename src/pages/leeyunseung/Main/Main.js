@@ -1,16 +1,11 @@
 import React from "react";
-import "./Main.scss";
 import Nav from "../Main/components/Nav";
-import Aside from "../Main/components/Aside";
-import Article from "../Main/components/Article";
 import User from "./components/User";
+import Article from "../Main/components/Article";
+import Aside from "../Main/components/Aside";
+import "./Main.scss";
 
 function MainLee() {
-  const { username, img } = {
-    username: "yunseung_lee",
-    img: "/images/Leeyunseung/dog.png",
-  };
-
   return (
     <div>
       <Nav />
@@ -27,3 +22,8 @@ function MainLee() {
 }
 
 export default MainLee;
+
+const { username, img } = {
+  username: "yunseung_lee",
+  img: "/images/Leeyunseung/dog.png",
+};
