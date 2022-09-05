@@ -1,10 +1,10 @@
 import React from "react";
-import Nav from "./Nav";
-import Story from "./Story";
-import Feed from "./Feed";
-import Profile from "./Profile";
-import Recommend from "./Recommend";
-import Footer from "./Footer";
+import Nav from "./components/Nav";
+import Story from "./components/Story";
+import Feed from "./components/Feed";
+import Profile from "./components/Profile";
+import Recommend from "./components/Recommend";
+import Footer from "./components/Footer";
 import "../Main/Main.scss";
 
 const MainJoo = () => {
