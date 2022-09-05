@@ -1,0 +1,276 @@
+h1 {
+  font-size: 30px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.wrapper_main {
+  background-color: #efefef;
+  margin: 0 auto;
+}
+
+.main-navigation {
+  border-bottom: 1px solid black;
+  background-color: #fff;
+}
+
+.logoinstagram {
+  width: 200px;
+}
+
+.nav-img1 {
+  display: flex;
+  float: left;
+  width: 25px;
+  margin-top: 47px;
+  margin-right: 10px;
+}
+.nav-imgs {
+  width: 25px;
+  margin-right: 5px;
+}
+
+.search-box {
+  position: relative;
+}
+.fa-solid {
+  position: absolute;
+  top: 8px;
+  margin-left: 90px;
+}
+.main-navigation .nav-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+  height: 50px;
+  margin: 0px auto;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  word-break: break-all;
+}
+.text {
+  background-color: #efefef;
+  border: 1px solid #efefef;
+  border-radius: 5px;
+  width: 250px;
+  margin: 0 auto;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.name {
+  margin-left: 8px;
+  flex: 2;
+}
+.li-content {
+  flex: 10;
+}
+
+.comment {
+  border-top: 2px solid #efefef;
+  margin-top: 20px;
+}
+
+#comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+#submit {
+  padding: 5px 5px 5px 5px;
+  border: none;
+  background-color: white;
+}
+
+#commentInput {
+  width: 420px;
+  height: 30px;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 8px;
+  border: none;
+  background-color: white;
+}
+
+.delete {
+  display: flex;
+  flex: 0.5;
+}
+
+.main {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+
+  padding-bottom: 200px;
+  background-color: #efefef;
+}
+
+.feeds {
+  width: 490px;
+  height: auto;
+  background-color: #fff;
+  border: 2px solid #e6e6e6;
+  display: flex;
+  margin-left: 100px;
+  border-radius: 8px;
+}
+
+article {
+  position: relative;
+  width: 490px;
+  height: auto;
+  margin: 20px 0px 20px 0px;
+  background-color: white;
+}
+.profiles {
+  width: 400px;
+}
+
+.stories {
+  margin-top: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.profile-img {
+  position: relative;
+}
+.profile-id {
+  position: absolute;
+  margin-top: 20px;
+
+  font-size: 20px;
+}
+
+.article-dog {
+  margin-top: 10px;
+  width: 522px;
+  height: 500px;
+}
+
+.dog {
+  position: absolute;
+  left: 0;
+  width: 487px;
+  height: 500px;
+}
+
+.article-imgs {
+  width: 25px;
+
+  margin-top: 7px;
+  margin-left: 10px;
+}
+.article-like {
+  margin-left: 8px;
+  margin-bottom: 5px;
+}
+.article-img1 {
+  width: 25px;
+  margin-top: 7px;
+  margin-right: 5px;
+  float: right;
+}
+
+.article-text {
+  margin-left: 8px;
+}
+
+form textarea {
+  width: 85%;
+  height: 30px;
+  outline: none;
+  border: none;
+  resize: none;
+  line-height: 25px;
+  text-indent: 5px;
+}
+
+form button {
+  width: 10%;
+  height: 30px;
+  outline: none;
+  border: none;
+}
+
+/*메인 오른쪽*/
+
+.main-right {
+  width: 300px;
+  height: 500px;
+  background-color: #efefef;
+  border: none;
+  display: flex;
+  border-radius: 5px;
+  margin-right: 60px;
+}
+.people-story {
+  width: 260px;
+  height: 180px;
+  border: 2px solid #e6e6e6;
+  overflow-y: scroll;
+  background-color: white;
+}
+
+.story-view {
+  margin-left: 140px;
+}
+
+.story-view1 {
+  margin-left: 63px;
+}
+
+.person-recommend,
+.story-fullview {
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+.story-box {
+  display: flex;
+}
+
+.stories1 {
+  margin-right: 10px;
+
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 5px;
+  border: 3px solid pink;
+}
+.merge {
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.recommend {
+  margin-top: 10px;
+  width: 260px;
+  height: 180px;
+  border: 2px solid #e6e6e6;
+
+  background-color: white;
+}
+
+.footer {
+  margin-top: 20px;
+}
