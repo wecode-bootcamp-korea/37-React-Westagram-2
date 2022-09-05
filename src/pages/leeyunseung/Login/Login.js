@@ -10,11 +10,11 @@ function LoginLee() {
 
   const onChangeId = (event) => {
     SetUserId(event.target.value);
+
     userId.includes("@") && userPassWord.length > 4
       ? setloginButton(true)
       : setloginButton(false);
   };
-  // console.log("id =", userId);
 
   const onChangePassWord = (event) => {
     setUserPassWord(event.target.value);
@@ -23,7 +23,6 @@ function LoginLee() {
       ? setloginButton(true)
       : setloginButton(false);
   };
-  // console.log("pw =", userPassWord);
 
   return (
     <div className="login-wrapper">

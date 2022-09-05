@@ -12,14 +12,14 @@ function Article({ children }) {
   const [commentList, setCommentList] = useState([]);
 
   const makeComment = (e) => {
-    e.preventDefault();
-    setCommentList([...commentList, comment]);
-    setComment("");
+    if (e.target.value.length > 0) {
+      setCommentList([...commentList, comment]);
+      setComment("");
+    }
   };
 
   const inputKeyUp = (e) => {
     if (e.key === "Enter" && e.target.value.length > 0) {
-      e.preventDefault();
       setCommentList([...commentList, comment]);
       setComment("");
     }
@@ -57,7 +57,11 @@ function Article({ children }) {
           placeholder="댓글 달기..."
           onKeyPress={inputKeyUp}
         />
-        <button className="commnet-button" onClick={makeComment}>
+        <button
+          className="commnet-button"
+          value={comment}
+          onClick={makeComment}
+        >
           게시
         </button>
       </div>
