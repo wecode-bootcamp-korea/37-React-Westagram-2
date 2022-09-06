@@ -4,21 +4,20 @@ import "./Article.scss";
 
 function Article({ children }) {
   const [comment, setComment] = useState("");
+  const [commentList, setCommentList] = useState([]);
 
-  const inputComment = (e) => {
+  const inputValue = (e) => {
     setComment(e.target.value);
   };
 
-  const [commentList, setCommentList] = useState([]);
-
-  const makeComment = (e) => {
+  const handleOnClick = (e) => {
     if (e.target.value.length > 0) {
       setCommentList([...commentList, comment]);
       setComment("");
     }
   };
 
-  const inputKeyUp = (e) => {
+  const handleOnKeyPress = (e) => {
     if (e.key === "Enter" && e.target.value.length > 0) {
       setCommentList([...commentList, comment]);
       setComment("");
@@ -51,16 +50,16 @@ function Article({ children }) {
       <div className="comment-input-container">
         <input
           value={comment}
-          onChange={inputComment}
+          onChange={inputValue}
           className="commnet-input"
           type="text"
           placeholder="댓글 달기..."
-          onKeyPress={inputKeyUp}
+          onKeyPress={handleOnKeyPress}
         />
         <button
           className="commnet-button"
           value={comment}
-          onClick={makeComment}
+          onClick={handleOnClick}
         >
           게시
         </button>

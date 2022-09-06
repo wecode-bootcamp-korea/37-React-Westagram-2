@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../../../src/components/Nav/Nav";
-import User from "./components/User";
+import User, { mainUser } from "./components/User";
 import Article from "../Main/components/Article";
 import Aside from "../Main/components/Aside";
 import "./Main.scss";
@@ -12,7 +12,7 @@ function MainLee() {
       <div className="main">
         <div className="feeds">
           <Article>
-            <User img={img} username={username} />
+            <User img={mainUser.img} username={mainUser.username} />
           </Article>
         </div>
         <Aside />
@@ -22,8 +22,3 @@ function MainLee() {
 }
 
 export default MainLee;
-
-const { username, img } = {
-  username: "yunseung_lee",
-  img: "/images/Leeyunseung/dog.png",
-};

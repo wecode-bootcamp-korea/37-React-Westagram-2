@@ -60,6 +60,11 @@
   }
   .aside-info-container {
     color: lightgrey;
+    width: 230px;
     font-weight: 600;
+
+    .aside-info-footer {
+      margin-top: 20px;
+    }
   }
 }

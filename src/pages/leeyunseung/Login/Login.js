@@ -7,13 +7,13 @@ function LoginLee() {
   const [inputValue, setInputValue] = useState({ email: "", password: "" });
   const [loginButton, setloginButton] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
-    handleLoginBtn();
+    handleClickBtn();
   };
 
-  const handleLoginBtn = () => {
+  const handleClickBtn = () => {
     inputValue.email.includes("@") && inputValue.password.length > 4
       ? setloginButton(true)
       : setloginButton(false);
@@ -27,13 +27,13 @@ function LoginLee() {
           placeholder="전화번호, 사용자 이름 또는 이메일"
           type="text"
           name="email"
-          onChange={handleLogin}
+          onChange={handleChangeInput}
         />
         <input
           placeholder="비밀번호"
           type="password"
           name="password"
-          onChange={handleLogin}
+          onChange={handleChangeInput}
         />
         <button
           type="button"
