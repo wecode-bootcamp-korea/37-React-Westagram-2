@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 
-function Login() {
+function LoginNam() {
   const navigate = useNavigate(); // 이동
 
   const [idInputValue, setIdValue] = useState("");
@@ -14,6 +14,12 @@ function Login() {
 
   const saveUserPw = (event) => {
     setPwValue(event.target.value);
+  };
+
+  const disabledHandle = () => {
+    return idInputValue.indexOf("@") >= 0 && pwInputValue.length >= 5
+      ? ""
+      : "disabled";
   };
 
   return (
@@ -43,11 +49,7 @@ function Login() {
                 navigate("/main-nam");
               }}
               type="submit"
-              disabled={
-                idInputValue.indexOf("@") >= 0 && pwInputValue.length >= 5
-                  ? ""
-                  : "disabled"
-              }
+              disabled={disabledHandle()}
               className="loginBtn"
             >
               로그인
@@ -62,4 +64,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginNam;
