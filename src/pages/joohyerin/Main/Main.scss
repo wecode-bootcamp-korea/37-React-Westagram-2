@@ -25,7 +25,6 @@ main {
   padding: 60px 0 80px 0;
 }
 
-/* header */
 .main header {
   @include flexSort(space-around, stretch);
   position: fixed;
@@ -40,9 +39,10 @@ main {
     font-size: 28px;
   }
 }
-.bar-search {
+
+.header-search {
   position: relative;
-  input {
+  .header-search-input {
     width: 260px;
     padding: 8px 16px 8px 40px;
     background-color: #efefef;
@@ -51,8 +51,7 @@ main {
     font-size: 16px;
     font-weight: lighter;
   }
-
-  .img-explore {
+  .header-search-icon {
     position: absolute;
     top: 9px;
     left: 16px;
@@ -60,20 +59,19 @@ main {
   }
 }
 
-.list-nav {
+.nav-list {
   display: flex;
   li img {
     width: 25px;
     height: 24px;
     margin: 5px 23px 0 0;
   }
-  .img-navProfile {
+  .nav-list-profile-img {
     border-radius: 100%;
   }
 }
 
-/* story */
-.box-story {
+.story {
   @include flexSort(flex-start, center);
   width: 470px;
   height: 120px;
@@ -82,11 +80,11 @@ main {
   background-color: white;
   padding: 16px;
   margin: 20px 0 20px 0;
-  .name-story {
+  .story-userId {
     font-size: 12px;
     padding: 0 0 0 4px;
   }
-  .img-story {
+  .story-borderStyle {
     border: 3px solid transparent;
     background-image: linear-gradient(#fff, #fff),
       linear-gradient(
@@ -108,117 +106,103 @@ main {
   margin: 0 20px 5px 0;
 }
 
-/* feed */
-.box-feed {
+.feed {
   width: 470px;
   border: 1px solid #e1e1e1;
   border-radius: 10px;
   background-color: white;
   overflow: hidden;
-}
+  .feed-head {
+    @include flexSort(space-between, center);
+    .feed-profile {
+      @include flexSort(flex-start, center);
+      padding: 15px;
+      .feed-userId {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 0 4px 10px;
+      }
 
-.head-feed {
-  @include flexSort(space-between, center);
-  .profile-feed {
-    @include flexSort(flex-start, center);
+      .feed-location {
+        font-size: 12px;
+        margin: 0 0 0 10px;
+      }
+    }
+    .icon-more {
+      width: 20px;
+      height: 20px;
+      margin: 0 20px 0 0;
+    }
+  }
+  .feed-img {
+    width: 470px;
+  }
+  .feed-icons {
+    @include flexSort(space-between, stretch);
     padding: 15px;
+  }
+  .feed-icon {
+    width: 25px;
+    margin: 0 10px 0 0;
+  }
+  .feed-countLike {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 15px 15px 15px;
+  }
+  .feed-comment {
+    margin: 15px 0 20px 15px;
+    .comment-text {
+      display: inline-block;
+      width: 390px;
+      margin: 0 0 10px 0;
+      font-size: 14px;
+    }
+    .comment-likeIcon:hover,
+    .comment-coloredLikeIcon:hover,
+    .comment-deleteIcon:hover {
+      cursor: pointer;
+    }
+    .comment-likeIcon {
+      display: inline-block;
+      background-image: url("../../../assets/images/joohyerin/heart.png");
+      background-size: 15px;
+      width: 15px;
+      height: 15px;
+    }
+    .comment-coloredLikeIcon {
+      display: inline-block;
+      background-image: url("../../../assets/images/joohyerin/fullHeart.png");
+      background-size: 15px;
+      width: 15px;
+      height: 15px;
+    }
+    .comment-deleteIcon {
+      display: inline-block;
+      background-image: url("../../../assets/images/joohyerin/delete.png");
+      margin: 0 0 2px 10px;
+      background-size: 12px;
+      width: 12px;
+      height: 12px;
+    }
   }
 }
 
-.icon-more {
-  width: 20px;
-  height: 20px;
-  margin: 0 20px 0 0;
-}
-
-.userName-feed {
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0 0 4px 10px;
-}
-
-.location-feed {
-  font-size: 12px;
-  margin: 0 0 0 10px;
-}
-
-.img-feed {
-  width: 470px;
-}
-
-.icon-feed {
-  @include flexSort(space-between, stretch);
-  padding: 15px;
-}
-
-.img-icon {
-  width: 25px;
-  margin: 0 10px 0 0;
-}
-
-.text-like {
-  font-size: 13px;
-  font-weight: bold;
-  margin: 0 15px 15px 15px;
-}
-
-.box-comment {
-  margin: 15px 0 20px 15px;
-}
-
-.text-comment {
-  display: inline-block;
-  width: 390px;
-  margin: 0 0 10px 0;
-  font-size: 14px;
-}
-
-.img-heart-comment:hover,
-.img-delete-comment:hover,
-.img-fullHeart-comment:hover {
-  cursor: pointer;
-}
-
-.img-heart-comment {
-  display: inline-block;
-  background-image: url("../../../assets/images/joohyerin/heart.png");
-  background-size: 15px;
-  width: 15px;
-  height: 15px;
-}
-.img-fullHeart-comment {
-  display: inline-block;
-  background-image: url("../../../assets/images/joohyerin/fullHeart.png");
-  background-size: 15px;
-  width: 15px;
-  height: 15px;
-}
-
-.img-delete-comment {
-  display: inline-block;
-  background-image: url("../../../assets/images/joohyerin/delete.png");
-  margin: 0 0 2px 10px;
-  background-size: 12px;
-  width: 12px;
-  height: 12px;
-}
-
-/* 댓글 */
-.box-chat {
+.feed-wrapInput {
   @include flexSort(flex-start, center);
   border-top: 1px solid #e1e1e1;
   padding: 15px;
-  .input-chat {
+  .feed-input {
     width: 350px;
     border: none;
   }
-  .btn-chat {
+  .feed-saveBtn {
     border: none;
     background-color: transparent;
     font-weight: bold;
     color: rgb(0, 149, 246, 0.3);
   }
-  .btn-chat-effect {
+  .feed-saveBtn-effect {
     color: rgb(0, 149, 246, 1);
     &:hover {
       cursor: pointer;
@@ -226,8 +210,7 @@ main {
   }
 }
 
-/* 오른쪽 */
-.box-aside {
+.aside {
   margin: 40px 0 0 40px;
 }
 
@@ -237,7 +220,7 @@ main {
   border: 1px solid #efefef;
 }
 
-.box-myProfile {
+.myProfile {
   @include flexSort(space-between, center);
   width: 320px;
   margin: 0 0 20px 0;
@@ -251,45 +234,45 @@ main {
   }
 }
 
-.box-recommend {
+.recommend {
   width: 320px;
   margin: 0 0 30px 0;
-}
-
-.head-recommend {
-  @include flexSort(space-between, center);
-  margin: 0 0 15px 0;
-  h2 {
-    color: #828282;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  .btn-recommend-all {
-    background-color: transparent;
-    border: none;
-    color: #262626;
-    font-weight: bold;
-    font-size: 12px;
-  }
-}
-.box-recommend-profile {
-  @include flexSort(space-between, center);
-  margin: 0 0 15px 0;
-  .profile-recommend {
-    @include flexSort(flex-start, stretch);
-    .userName-recommend {
+  .recommend-head {
+    @include flexSort(space-between, center);
+    margin: 0 0 15px 0;
+    h2 {
+      color: #828282;
+      font-weight: bold;
       font-size: 14px;
+    }
+    .recommend-all-btn {
+      background-color: transparent;
+      border: none;
       color: #262626;
       font-weight: bold;
-      margin: 0 0 4px 10px;
-    }
-    .follower-recommend {
       font-size: 12px;
-      color: #8e8e8e;
-      margin: 0 0 0 10px;
+    }
+  }
+  .recommend-others {
+    @include flexSort(space-between, center);
+    margin: 0 0 15px 0;
+    .recommend-others-profile {
+      @include flexSort(flex-start, stretch);
+      .others-profile-userId {
+        font-size: 14px;
+        color: #262626;
+        font-weight: bold;
+        margin: 0 0 4px 10px;
+      }
+      .others-profile-follower {
+        font-size: 12px;
+        color: #8e8e8e;
+        margin: 0 0 0 10px;
+      }
     }
   }
 }
+
 .btn-blue {
   background-color: transparent;
   border: none;
@@ -298,7 +281,6 @@ main {
   font-size: 12px;
 }
 
-/* footer */
 .footer {
   width: 320px;
   line-height: 18px;
@@ -309,139 +291,13 @@ main {
   }
 }
 
-/* id검색 상자 */
-.box-filteredId {
-  display: none;
-  position: absolute;
-  top: 50px;
-  left: -50px;
-  width: 375px;
-  height: 375px;
-  background-color: white;
-  border-radius: 6px;
-  border: 1px solid #e1e1e1;
-  overflow: scroll;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
-  padding: 10px;
-  .box-recentSearch {
-    position: relative;
-    .title-recentSearch {
-      position: absolute;
-      color: #262626;
-      font-weight: bold;
-      font-size: 16px;
-      top: 10px;
-      left: 5px;
-      margin: 10px 15px;
-    }
-    .content-recentSearch {
-      position: absolute;
-      color: #8e8e8e;
-      font-size: 14px;
-      font-weight: bold;
-      top: 180px;
-      left: 110px;
-    }
-  }
-}
-
-.filteredId {
-  /* display: inline-block; */
-  font-size: 14px;
-  font-weight: bold;
-  padding: 0 0 7px 0;
-}
-
-.filteredImg {
-  display: inline-block;
-  margin: 10px;
-  width: 44px;
-  height: 44px;
-  border-radius: 100%;
-}
-
-.wrapFiltered {
-  @include flexSort(flex-start, center);
-}
-
-.wrapText {
-  display: flex;
-  flex-direction: column;
-}
-
-.filteredName {
-  font-size: 14px;
-  color: #8e8e8e;
-}
-
-/* 프로필 메뉴 */
-.list-profile {
-  position: relative;
-}
-
-.wrap-menu {
-  display: none;
-  position: absolute;
-  top: 50px;
-  right: 0;
-  background-color: white;
-  width: 230px;
-  border-radius: 6px;
-  border: 1px solid #e1e1e1;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
-  padding: 20px;
-  div {
-    display: flex;
-  }
-  div img {
-    width: 16px;
-    height: 16px;
-    margin: 0 10px 0 0;
-  }
-  div p,
-  p {
-    font-size: 14px;
-    color: #262626;
-  }
-}
-
-.menu-profile,
-.menu-bookmark,
-.menu-setting,
-.menu-change {
-  padding: 0 0 25px 0;
-}
-
-/* 미디어쿼리 */
 @media (max-width: 1000px) {
-  .box-aside {
+  .aside {
     display: none;
   }
   header h1 {
     position: absolute;
     top: 15px;
     left: 25px;
-  }
-  .bar-search {
-    left: 110px;
-  }
-}
-@media (max-width: 800px) {
-  .bar-search input {
-    width: 200px;
-  }
-}
-
-@media (max-width: 760px) {
-  .bar-search {
-    display: none;
-  }
-  .list-nav {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-  }
-  header {
-    height: 65px;
   }
 }
