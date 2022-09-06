@@ -1,5 +1,6 @@
 import React from "react";
 import Story from "./Story";
+import Recommend from "./Recommend";
 import { WESTA_INFO_LIST_LI } from "./uiData";
 
 function Aside() {
@@ -19,36 +20,7 @@ function Aside() {
 
       <Story />
 
-      <div className="userRecommend">
-        <div className="title">
-          <span>회원님을 취한 추천</span>
-          <span>모두 보기</span>
-        </div>
-        <div className="userInfo">
-          <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-          <div>
-            <span>joaaaaaaahye</span>
-            <span>_leqend_a님 외 2명이 ...</span>
-          </div>
-          <span>팔로우</span>
-        </div>
-        <div className="userInfo">
-          <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-          <div>
-            <span>joaaaaaaahye</span>
-            <span>_leqend_a님 외 2명이 ...</span>
-          </div>
-          <span>팔로우</span>
-        </div>
-        <div className="userInfo">
-          <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-          <div>
-            <span>joaaaaaaahye</span>
-            <span>_leqend_a님 외 2명이 ...</span>
-          </div>
-          <span>팔로우</span>
-        </div>
-      </div>
+      <Recommend />
 
       <div className="westaInfo">
         <ul>{westaInfoList}</ul>
