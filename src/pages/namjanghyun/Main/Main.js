@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Main.scss";
-import Header from "./components/Header";
 import Feeds from "./components/Feeds";
 import Aside from "./components/Aside";
+import Nav from "../../../components/Nav/Nav";
 
 function MainNam() {
   const [commentInputValue, setCommentValue] = useState("");
@@ -52,7 +52,7 @@ function MainNam() {
 
   return (
     <div className="containerWrapperMain">
-      <Header />
+      <Nav />
       <main className="main">
         <div className="mainWrap">
           <Feeds

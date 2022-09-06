@@ -358,11 +358,11 @@
             div {
               display: flex;
               flex-direction: column;
-              justify-content: center;
+              justify-content: space-evenly;
 
               span {
                 &:nth-child(1) {
-                  font-weight: 900;
+                  font-weight: 600;
                 }
 
                 &:nth-child(2) {
@@ -412,13 +412,14 @@
 
           div {
             width: 215px;
+            height: 40px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-evenly;
 
             span {
               &:nth-child(1) {
-                font-weight: 900;
+                font-weight: 600;
               }
 
               &:nth-child(2) {
