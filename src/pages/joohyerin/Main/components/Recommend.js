@@ -20,7 +20,7 @@ const Recommend = () => {
             <div>
               <p className="others-profile-userId">{recommendUser.userId}</p>
               <p className="others-profile-follower">
-                ${recommendUser.followerId}님이 팔로우합니다
+                {recommendUser.followerId}님이 팔로우합니다
               </p>
             </div>
           </div>
