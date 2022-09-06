@@ -1,10 +1,12 @@
 import React from "react";
+import Story from "./Story";
 import { WESTA_INFO_LIST_LI } from "./uiData";
 
 function Aside() {
   const westaInfoList = WESTA_INFO_LIST_LI.map((infoList) => {
     return <li key={infoList.id}>{infoList.menuName}</li>;
   });
+
   return (
     <aside className="main-right">
       <div className="userInfo">
@@ -15,63 +17,7 @@ function Aside() {
         </div>
       </div>
 
-      <div className="story">
-        <div className="title">
-          <span>스토리</span>
-          <span>모두 보기</span>
-        </div>
-        <div className="infoWrap">
-          <div className="userInfo">
-            <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-            <div>
-              <span>_yum_s</span>
-              <span>16분전</span>
-            </div>
-          </div>
-          <div className="userInfo">
-            <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-            <div>
-              <span>_yum_s</span>
-              <span>16분전</span>
-            </div>
-          </div>
-          <div className="userInfo">
-            <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-            <div>
-              <span>_yum_s</span>
-              <span>16분전</span>
-            </div>
-          </div>
-          <div className="userInfo">
-            <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-            <div>
-              <span>_yum_s</span>
-              <span>16분전</span>
-            </div>
-          </div>
-          <div className="userInfo">
-            <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-            <div>
-              <span>_yum_s</span>
-              <span>16분전</span>
-            </div>
-          </div>
-          <div className="userInfo">
-            <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-            <div>
-              <span>_yum_s</span>
-              <span>16분전</span>
-            </div>
-          </div>
-          <div className="userInfo">
-            <img src="/images/namjanghyun/profile_img.png" alt="userImg" />
-            <div>
-              <span>_yum_s</span>
-              <span>16분전</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Story />
 
       <div className="userRecommend">
         <div className="title">

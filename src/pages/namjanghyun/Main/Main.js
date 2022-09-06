@@ -53,14 +53,18 @@ function MainNam() {
   return (
     <div className="containerWrapperMain">
       <Nav />
+
       <main className="main">
         <div className="mainWrap">
-          <Feeds
-            commentInputValue={commentInputValue}
-            saveComment={saveComment}
-            createArray={createArray}
-            ViewComment={ViewComment}
-          />
+          <div className="feeds">
+            <Feeds
+              commentInputValue={commentInputValue}
+              saveComment={saveComment}
+              createArray={createArray}
+              ViewComment={ViewComment}
+            />
+          </div>
+
           <Aside />
         </div>
       </main>
