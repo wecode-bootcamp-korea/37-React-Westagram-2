@@ -1,5 +1,6 @@
 import React from "react";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
+import Nav from "../../../components/Nav/Nav";
 import Story from "./components/Story";
 import Feed from "./components/Feed";
 import Profile from "./components/Profile";
