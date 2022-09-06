@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../Main/components/Nav";
+import Nav from "../../../../src/components/Nav/Nav";
 import User from "./components/User";
 import Article from "../Main/components/Article";
 import Aside from "../Main/components/Aside";
