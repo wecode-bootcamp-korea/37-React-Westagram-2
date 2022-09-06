@@ -2,7 +2,7 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <div className="box-myProfile">
+    <div className="myProfile">
       <div>
         <img
           className="img-profile-56px"

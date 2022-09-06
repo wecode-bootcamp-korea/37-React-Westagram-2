@@ -15,10 +15,10 @@ const Feed = () => {
     setChat("");
   };
   const changeHeartImg = (e) => {
-    if (e.target.className === "img-heart-comment") {
-      e.target.className = "img-fullHeart-comment";
+    if (e.target.className === "comment-likeIcon") {
+      e.target.className = "comment-coloredLikeIcon";
     } else {
-      e.target.className = "img-heart-comment";
+      e.target.className = "comment-likeIcon";
     }
   };
   const deleteChat = (e) => {
@@ -26,17 +26,17 @@ const Feed = () => {
   };
 
   return (
-    <article className="box-feed">
-      <div className="head-feed">
-        <div className="profile-feed">
+    <article className="feed">
+      <div className="feed-head">
+        <div className="feed-profile">
           <img
             className="img-profile-32px"
             src={`${process.env.PUBLIC_URL}/images/joohyerin/profile_apple.jpg`}
             alt="프로필 이미지"
           />
           <div>
-            <p className="userName-feed">apple_01</p>
-            <p className="location-feed">Seoul, Kroea</p>
+            <p className="feed-userId">apple_01</p>
+            <p className="feed-location">Seoul, Kroea</p>
           </div>
         </div>
         <img
@@ -47,39 +47,39 @@ const Feed = () => {
       </div>
 
       <img
-        className="img-feed"
+        className="feed-img"
         src={`${process.env.PUBLIC_URL}/images/joohyerin/feed_apple.jpg`}
         alt="피드 이미지"
       />
 
-      <div className="icon-feed">
+      <div className="feed-icons">
         <div>
           <img
-            className="img-icon"
+            className="feed-icon"
             src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/heart.png`}
             alt="하트 아이콘"
           />
           <img
-            className="img-icon"
+            className="feed-icon"
             src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/chat.png`}
             alt="댓글 아이콘"
           />
           <img
-            className="img-icon"
+            className="feed-icon"
             src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/send.png`}
             alt="다이렉트 메시지 아이콘"
           />
         </div>
         <img
-          className="img-icon"
+          className="feed-icon"
           src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/bookmark.png`}
           alt="북마크 아이콘"
         />
       </div>
 
-      <p className="text-like">좋아요 120개</p>
+      <p className="feed-countLike">좋아요 120개</p>
 
-      <div className="box-comment">
+      <div className="feed-comment">
         {chatList.map((value) => (
           <Comment
             key={value.id}
@@ -90,9 +90,9 @@ const Feed = () => {
         ))}
       </div>
 
-      <div className="box-chat">
+      <div className="feed-wrapInput">
         <img
-          className="img-icon"
+          className="feed-icon"
           src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/smile.png`}
           alt="이모지 아이콘"
         />
@@ -100,11 +100,11 @@ const Feed = () => {
           <input
             value={chat}
             onChange={changeChat}
-            className="input-chat"
+            className="feed-input"
             type="text"
             placeholder="댓글 달기..."
           />
-          <button onClick={saveChat} className="btn-chat">
+          <button onClick={saveChat} className="feed-saveBtn">
             게시
           </button>
         </form>

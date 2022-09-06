@@ -3,15 +3,15 @@ import React from "react";
 const Comment = ({ content, changeHeartImg, deleteChat }) => {
   return (
     <div>
-      <p className="text-comment">{content}</p>
+      <p className="comment-text">{content}</p>
       <div
         onClick={changeHeartImg}
-        className="img-heart-comment"
+        className="comment-likeIcon"
         alt="좋아요 아이콘"
       />
       <div
         onClick={deleteChat}
-        className="img-delete-comment"
+        className="comment-deleteIcon"
         alt="삭제 아이콘"
       />
     </div>
