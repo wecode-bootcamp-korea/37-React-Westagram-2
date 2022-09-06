@@ -4,22 +4,17 @@ import "./Login.scss";
 
 function LoginLee() {
   const navigate = useNavigate();
-  const [userId, SetUserId] = useState("");
-  const [userPassWord, setUserPassWord] = useState("");
+  const [inputValue, setInputValue] = useState({ email: "", password: "" });
   const [loginButton, setloginButton] = useState(false);
 
-  const onChangeId = (event) => {
-    SetUserId(event.target.value);
-
-    userId.includes("@") && userPassWord.length > 4
-      ? setloginButton(true)
-      : setloginButton(false);
+  const handleLogin = (e) => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
+    handleLoginBtn();
   };
 
-  const onChangePassWord = (event) => {
-    setUserPassWord(event.target.value);
-
-    userId.includes("@") && userPassWord.length > 4
+  const handleLoginBtn = () => {
+    inputValue.email.includes("@") && inputValue.password.length > 4
       ? setloginButton(true)
       : setloginButton(false);
   };
@@ -31,14 +26,14 @@ function LoginLee() {
         <input
           placeholder="전화번호, 사용자 이름 또는 이메일"
           type="text"
-          value={userId}
-          onChange={onChangeId}
+          name="email"
+          onChange={handleLogin}
         />
         <input
           placeholder="비밀번호"
           type="password"
-          value={userPassWord}
-          onChange={onChangePassWord}
+          name="password"
+          onChange={handleLogin}
         />
         <button
           type="button"
