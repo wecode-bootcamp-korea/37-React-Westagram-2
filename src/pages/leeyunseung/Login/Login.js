@@ -10,13 +10,59 @@ function LoginLee() {
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
-    handleClickBtn();
-  };
 
-  const handleClickBtn = () => {
     inputValue.email.includes("@") && inputValue.password.length > 4
       ? setloginButton(true)
       : setloginButton(false);
+  };
+
+  const handleClickBtnSinIn = (e) => {
+    e.preventDefault();
+
+    fetch("http://10.58.5.155:3000/auth/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        email: inputValue.email,
+        password: inputValue.password,
+      }),
+    })
+      .then((response) => {
+        if (response.ok === true) {
+          return response.json();
+        }
+        throw new Error("에러 발생!");
+      })
+      // .catch((error) => console.log(error))
+      .then((data) => {
+        localStorage.setItem("TOKEN", data.accessToken);
+        if (data.accessToken) {
+          navigate("../Main-lee");
+        }
+      });
+  };
+
+  const handleClickBtnSignUp = (e) => {
+    e.preventDefault();
+    fetch("http://10.58.5.155:3000/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        email: inputValue.email,
+        password: inputValue.password,
+      }),
+    }).then((response) => {
+      if (response.ok === true) {
+        alert("회원가입 성공");
+        return response.json();
+      }
+      throw new Error("에러 발생!");
+    });
+    // .catch((error) => console.log(error));
   };
 
   return (
@@ -38,9 +84,14 @@ function LoginLee() {
         <button
           type="button"
           className={loginButton ? "on-button" : "off-button"}
-          onClick={() => {
-            return loginButton ? navigate("../Main-lee") : null;
-          }}
+          onClick={handleClickBtnSignUp}
+        >
+          회원가입
+        </button>
+        <button
+          type="button"
+          className={loginButton ? "on-button" : "off-button"}
+          onClick={handleClickBtnSinIn}
         >
           로그인
         </button>
