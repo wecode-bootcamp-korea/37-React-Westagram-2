@@ -53,7 +53,6 @@ function MainNam() {
   return (
     <div className="containerWrapperMain">
       <Nav />
-
       <main className="main">
         <div className="mainWrap">
           <div className="feeds">
@@ -64,7 +63,6 @@ function MainNam() {
               ViewComment={ViewComment}
             />
           </div>
-
           <Aside />
         </div>
       </main>

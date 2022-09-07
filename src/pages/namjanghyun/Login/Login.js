@@ -5,17 +5,7 @@ import "./Login.scss";
 function LoginNam() {
   const navigate = useNavigate(); // 이동
 
-  // const [idInputValue, setIdValue] = useState("");
-  // const [pwInputValue, setPwValue] = useState("");
-  const [inputValue, setInputValue] = useState({ email: "", pw: "" });
-
-  // const saveUserId = (event) => {
-  //   setIdValue(event.target.value);
-  // };
-
-  // const saveUserPw = (event) => {
-  //   setPwValue(event.target.value);
-  // };
+  const [inputValue, setInputValue] = useState({ email: "", password: "" });
 
   const handleLogin = (event) => {
     const { name, value } = event.target;
@@ -23,9 +13,53 @@ function LoginNam() {
   };
 
   const handleDisabled = () => {
-    return inputValue.email.indexOf("@") >= 0 && inputValue.pw.length >= 5
+    return inputValue.email.indexOf("@") >= 0 && inputValue.password.length >= 5
       ? ""
       : "disabled";
+  };
+
+  const handleSigninBtn = (event) => {
+    event.preventDefault();
+    // fetch("http://10.58.0.33:3000/auth/signin", { // 응수님 서버
+    fetch("https://westagram-signup.herokuapp.com/login", {
+      // 테스트 서버
+      method: "post",
+      headers: { "content-Type": "application/json;charset=utf-8" },
+      body: JSON.stringify({
+        // email: inputValue.email,
+        id: inputValue.email,
+        password: inputValue.password,
+      }),
+    }) //요청
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+
+        if (data.token) {
+          navigate("/main-nam");
+        } else {
+          alert("정확한 비밀번호를 입력해 주세요!");
+        }
+      });
+    //응답
+  };
+
+  const handleSignupBtn = (event) => {
+    event.preventDefault();
+    // fetch("http://10.58.0.33:3000/auth/signup", { // 응수님 서버
+    fetch("http://westagram-signup.herokuapp.com/signup ", {
+      // 테스트 서버
+      method: "Post",
+      headers: { "content-Type": "application/json;charset=utf-8" },
+      body: JSON.stringify({
+        // email: inputValue.email,
+        id: inputValue.email,
+        password: inputValue.password,
+      }),
+    }) //요청
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+    //응답
   };
 
   return (
@@ -41,21 +75,24 @@ function LoginNam() {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               className="idInput"
-              // value={idInputValue}
               onChange={handleLogin}
             />
             <input
-              name="pw"
+              name="password"
               type="password"
               placeholder="비밀번호"
               className="pwInput"
-              // value={pwInputValue}
               onChange={handleLogin}
             />
             <button
-              onClick={() => {
-                navigate("/main-nam");
-              }}
+              onClick={handleSignupBtn}
+              type="submit"
+              className="loginBtn"
+            >
+              회원가입
+            </button>
+            <button
+              onClick={handleSigninBtn}
               type="submit"
               disabled={handleDisabled()}
               className="loginBtn"
