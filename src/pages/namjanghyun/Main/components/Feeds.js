@@ -1,6 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Comment from "./Comment";
 
-function Feeds({ commentInputValue, saveComment, createArray, ViewComment }) {
+function Feeds() {
+  const [commentInputValue, setCommentValue] = useState("");
+  const [commentArray, setCommentArray] = useState([]);
+  // const [feedsData, setFeedsData] = useState([]);
+  const [feedDataList, setFeedDataList] = useState([]);
+
+  const clear = () => {
+    setCommentValue("");
+  };
+
+  const saveComment = (event) => {
+    // console.log(event.target.value);
+    setCommentValue(event.target.value);
+    // console.log(typeof setCommentValue);
+  };
+
+  const createArray = (event) => {
+    event.preventDefault();
+    setCommentArray((prevList) => [...prevList, commentInputValue]);
+    //console.log(commentInputValue, commentArray);
+    clear();
+  };
+
+  useEffect(() => {
+    fetch("./data/feedData.json")
+      .then((response) => response.json())
+      .then((result) => setFeedDataList(result));
+  }, []);
+
+  const commentList = commentArray.map((value, index) => {
+    return <Comment value={value} key={index} />;
+  });
+
   return (
     <div className="feeds">
       <article>
@@ -47,9 +80,7 @@ function Feeds({ commentInputValue, saveComment, createArray, ViewComment }) {
         </div>
 
         <div className="feedboxWrap">
-          <ul className="feedBox">
-            <ViewComment />
-          </ul>
+          <ul className="feedBox">{commentList}</ul>
         </div>
 
         <div className="feedTimeBox">

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header(props) {
+function Header() {
   return (
     <header className="header">
       <nav className="navigation">
