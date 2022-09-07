@@ -5,19 +5,25 @@ import "./Login.scss";
 function LoginNam() {
   const navigate = useNavigate(); // 이동
 
-  const [idInputValue, setIdValue] = useState("");
-  const [pwInputValue, setPwValue] = useState("");
+  // const [idInputValue, setIdValue] = useState("");
+  // const [pwInputValue, setPwValue] = useState("");
+  const [inputValue, setInputValue] = useState({ email: "", pw: "" });
 
-  const saveUserId = (event) => {
-    setIdValue(event.target.value);
+  // const saveUserId = (event) => {
+  //   setIdValue(event.target.value);
+  // };
+
+  // const saveUserPw = (event) => {
+  //   setPwValue(event.target.value);
+  // };
+
+  const handleLogin = (event) => {
+    const { name, value } = event.target;
+    setInputValue({ ...inputValue, [name]: value });
   };
 
-  const saveUserPw = (event) => {
-    setPwValue(event.target.value);
-  };
-
-  const disabledHandle = () => {
-    return idInputValue.indexOf("@") >= 0 && pwInputValue.length >= 5
+  const handleDisabled = () => {
+    return inputValue.email.indexOf("@") >= 0 && inputValue.pw.length >= 5
       ? ""
       : "disabled";
   };
@@ -31,25 +37,27 @@ function LoginNam() {
           </div>
           <form className="loginWrap">
             <input
+              name="email"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               className="idInput"
-              value={idInputValue}
-              onChange={saveUserId}
+              // value={idInputValue}
+              onChange={handleLogin}
             />
             <input
+              name="pw"
               type="password"
               placeholder="비밀번호"
               className="pwInput"
-              value={pwInputValue}
-              onChange={saveUserPw}
+              // value={pwInputValue}
+              onChange={handleLogin}
             />
             <button
               onClick={() => {
                 navigate("/main-nam");
               }}
               type="submit"
-              disabled={disabledHandle()}
+              disabled={handleDisabled()}
               className="loginBtn"
             >
               로그인
