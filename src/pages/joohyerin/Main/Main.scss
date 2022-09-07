@@ -112,6 +112,7 @@ main {
   border-radius: 10px;
   background-color: white;
   overflow: hidden;
+  margin: 0 0 20px 0;
   .feed-head {
     @include flexSort(space-between, center);
     .feed-profile {
