@@ -3,7 +3,7 @@ import React from "react";
 const Story = () => {
   return (
     <div className="story">
-      {userInfoList.map((userInfo) => {
+      {USER_INFO_LIST.map((userInfo) => {
         return (
           <li key={userInfo.id}>
             <img
@@ -20,7 +20,7 @@ const Story = () => {
 };
 export default Story;
 
-const userInfoList = [
+const USER_INFO_LIST = [
   { id: 1, userId: "apple_01", profileImg: "profile_apple.jpg" },
   { id: 2, userId: "peach_02", profileImg: "profile_peach.jpg" },
 ];
