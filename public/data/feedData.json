@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "userId": "aaaaa1",
+    "userId": "test1",
     "text": "fkrh1",
-    "src": "/images/namjanghyun/feed_img.jpg",
-    "profile": "/images/namjanghyun/profile_img.png"
+    "src": "./images/namjanghyun/feed_img.jpg",
+    "profile": "./images/namjanghyun/profile_img.png"
   },
   {
     "id": 2,
-    "userId": "aaaaa2",
+    "userId": "test2",
     "text": "fkrh2",
-    "src": "/images/namjanghyun/feed_img.jpg",
-    "profile": "/images/namjanghyun/profile_img.png"
+    "src": "./images/namjanghyun/feed_img.jpg",
+    "profile": "./images/namjanghyun/profile_img.png"
   },
   {
     "id": 3,
-    "userId": "aaaaa3",
+    "userId": "test3",
     "text": "fkrh3",
-    "src": "/images/namjanghyun/feed_img.jpg",
-    "profile": "/images/namjanghyun/profile_img.png"
+    "src": "./images/namjanghyun/feed_img.jpg",
+    "profile": "./images/namjanghyun/profile_img.png"
   }
 ]

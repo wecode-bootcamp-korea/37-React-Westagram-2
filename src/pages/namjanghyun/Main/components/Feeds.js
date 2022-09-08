@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Comment from "./Comment";
 
-function Feeds() {
+function Feeds(feed) {
+  // console.log(feed.feed.src);
   const [commentInputValue, setCommentValue] = useState("");
   const [commentArray, setCommentArray] = useState([]);
-  // const [feedsData, setFeedsData] = useState([]);
-  const [feedDataList, setFeedDataList] = useState([]);
 
   const clear = () => {
     setCommentValue("");
@@ -24,23 +23,17 @@ function Feeds() {
     clear();
   };
 
-  useEffect(() => {
-    fetch("./data/feedData.json")
-      .then((response) => response.json())
-      .then((result) => setFeedDataList(result));
-  }, []);
-
   const commentList = commentArray.map((value, index) => {
     return <Comment value={value} key={index} />;
   });
 
   return (
     <div className="feeds">
-      <article>
+      <article key={feed.feed.id}>
         <div className="topSection">
           <div className="profileInfo">
             <div className="profileImgBox">
-              <img src="/images/namjanghyun/profile_img.png" alt="profile" />
+              <img src={feed.feed.profile} alt="profile" />
             </div>
             <div className="profileTextBox">
               <span>wecode</span>
@@ -52,7 +45,7 @@ function Feeds() {
         </div>
 
         <div className="imageSection">
-          <img src="/images/namjanghyun/feed_img.jpg" alt="Bag" />
+          <img src={feed.feed.src} alt="Bag" />
         </div>
 
         <div className="likeSection">
@@ -72,9 +65,9 @@ function Feeds() {
         </div>
 
         <div className="feedId">
-          <img src="/images/namjanghyun/profile_img.png" alt="profile" />
+          <img src={feed.feed.profile} alt="profile" />
           <div>
-            <span>aineworl</span>
+            <span>{feed.feed.userId}</span>
             <span>님 외 10명이 좋아합니다</span>
           </div>
         </div>
