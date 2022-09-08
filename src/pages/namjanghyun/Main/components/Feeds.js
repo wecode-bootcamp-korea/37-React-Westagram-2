@@ -19,7 +19,6 @@ function Feeds(props) {
   const createArray = (event) => {
     event.preventDefault();
     setCommentArray((prevList) => [...prevList, commentInputValue]);
-    //console.log(commentInputValue, commentArray);
     clear();
   };
 

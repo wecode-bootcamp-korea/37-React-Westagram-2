@@ -2,21 +2,28 @@
   {
     "id": 1,
     "userId": "test1",
-    "text": "fkrh1",
+    "text": "게시물1",
     "src": "./images/namjanghyun/feed_img.jpg",
     "profile": "./images/namjanghyun/profile_img.png"
   },
   {
     "id": 2,
     "userId": "test2",
-    "text": "fkrh2",
+    "text": "게시물2",
     "src": "./images/namjanghyun/feed_img.jpg",
     "profile": "./images/namjanghyun/profile_img.png"
   },
   {
     "id": 3,
     "userId": "test3",
-    "text": "fkrh3",
+    "text": "게시물3",
+    "src": "./images/namjanghyun/feed_img.jpg",
+    "profile": "./images/namjanghyun/profile_img.png"
+  },
+  {
+    "id": 4,
+    "userId": "test4",
+    "text": "게시물4",
     "src": "./images/namjanghyun/feed_img.jpg",
     "profile": "./images/namjanghyun/profile_img.png"
   }
