@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Comment from "./Comment";
 
-function Feeds(feed) {
-  // console.log(feed.feed.src);
+function Feeds(props) {
+  // console.log(props.feed.src);
   const [commentInputValue, setCommentValue] = useState("");
   const [commentArray, setCommentArray] = useState([]);
 
@@ -29,11 +29,11 @@ function Feeds(feed) {
 
   return (
     <div className="feeds">
-      <article key={feed.feed.id}>
+      <article key={props.feed.id}>
         <div className="topSection">
           <div className="profileInfo">
             <div className="profileImgBox">
-              <img src={feed.feed.profile} alt="profile" />
+              <img src={props.feed.profile} alt="profile" />
             </div>
             <div className="profileTextBox">
               <span>wecode</span>
@@ -45,7 +45,7 @@ function Feeds(feed) {
         </div>
 
         <div className="imageSection">
-          <img src={feed.feed.src} alt="Bag" />
+          <img src={props.feed.src} alt="Bag" />
         </div>
 
         <div className="likeSection">
@@ -65,9 +65,9 @@ function Feeds(feed) {
         </div>
 
         <div className="feedId">
-          <img src={feed.feed.profile} alt="profile" />
+          <img src={props.feed.profile} alt="profile" />
           <div>
-            <span>{feed.feed.userId}</span>
+            <span>{props.feed.userId}</span>
             <span>님 외 10명이 좋아합니다</span>
           </div>
         </div>
