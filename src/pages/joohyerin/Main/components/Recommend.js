@@ -9,7 +9,7 @@ const Recommend = () => {
           모두 보기
         </button>
       </div>
-      {recommendUserList.map((recommendUser) => (
+      {RECOMMEND_USER_LIST.map((recommendUser) => (
         <div className="recommend-others" key={recommendUser.id}>
           <div className="recommend-others-profile">
             <img
@@ -35,7 +35,7 @@ const Recommend = () => {
 
 export default Recommend;
 
-const recommendUserList = [
+const RECOMMEND_USER_LIST = [
   {
     id: 1,
     userId: "watermelon_03",
