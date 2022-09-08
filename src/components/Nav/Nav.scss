@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 .navbar {
+  position: fixed;
+  width: 100%;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 80px;
+  height: 67px;
   border-bottom: 1px solid lightgrey;
   img {
-    width: 40px;
+    width: 30px;
   }
   .nav-left {
     display: flex;
@@ -17,7 +20,7 @@
     p {
       display: flex;
       align-items: center;
-      height: 30px;
+      height: 25px;
       margin-left: 10px;
       padding-left: 10px;
       border-left: 3px solid black;
@@ -45,6 +48,7 @@
   .nav-right {
     img {
       margin: 0 10px;
+      width: 25px;
     }
   }
 }

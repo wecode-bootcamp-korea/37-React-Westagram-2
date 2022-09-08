@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "userId": "apple_01",
+    "profileImage": "profile_apple.jpg",
+    "location": "Seoul, Korea",
+    "feedImage": "feed_apple.jpg"
+  },
+  {
+    "id": 2,
+    "userId": "peach_02",
+    "profileImage": "profile_peach.jpg",
+    "location": "Seoul, Korea",
+    "feedImage": "profile_peach.jpg"
+  },
+  {
+    "id": 3,
+    "userId": "watermelon_03",
+    "profileImage": "profile_watermelon.jpg",
+    "location": "Seoul, Korea",
+    "feedImage": "profile_watermelon.jpg"
+  },
+  {
+    "id": 4,
+    "userId": "lemon_04",
+    "profileImage": "profile_lemon.jpg",
+    "location": "Seoul, Korea",
+    "feedImage": "profile_lemon.jpg"
+  },
+  {
+    "id": 5,
+    "userId": "candy_01",
+    "profileImage": "profile_candy.jpg",
+    "location": "Seoul, Korea",
+    "feedImage": "profile_candy.jpg"
+  }
+]
