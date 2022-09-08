@@ -16,7 +16,7 @@ function LoginLee() {
       : setloginButton(false);
   };
 
-  const handleClickBtnSinIn = (e) => {
+  const handleClickBtnSignIn = (e) => {
     e.preventDefault();
 
     fetch("http://10.58.5.155:3000/auth/signin", {
@@ -91,7 +91,7 @@ function LoginLee() {
         <button
           type="button"
           className={loginButton ? "on-button" : "off-button"}
-          onClick={handleClickBtnSinIn}
+          onClick={handleClickBtnSignIn}
         >
           로그인
         </button>

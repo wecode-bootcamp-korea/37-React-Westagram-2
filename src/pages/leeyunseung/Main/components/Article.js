@@ -10,14 +10,14 @@ function Article({ children }) {
     setComment(e.target.value);
   };
 
-  const handleOnClick = (e) => {
+  const handleClickInput = (e) => {
     if (e.target.value.length > 0) {
       setCommentList([...commentList, comment]);
       setComment("");
     }
   };
 
-  const handleOnKeyPress = (e) => {
+  const handleKeyPressInput = (e) => {
     if (e.key === "Enter" && e.target.value.length > 0) {
       setCommentList([...commentList, comment]);
       setComment("");
@@ -54,12 +54,12 @@ function Article({ children }) {
           className="commnet-input"
           type="text"
           placeholder="댓글 달기..."
-          onKeyPress={handleOnKeyPress}
+          onKeyPress={handleKeyPressInput}
         />
         <button
           className="commnet-button"
           value={comment}
-          onClick={handleOnClick}
+          onClick={handleClickInput}
         >
           게시
         </button>
