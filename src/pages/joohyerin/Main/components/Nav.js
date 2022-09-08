@@ -14,7 +14,7 @@ const Nav = () => {
       </div>
       <nav>
         <ul className="nav-list">
-          {navIconSrc.map((icon) => (
+          {ICON_SRC.map((icon) => (
             <li key={icon.id}>
               <img
                 src={`${process.env.PUBLIC_URL}/images/joohyerin/icon/${icon.src}`}
@@ -37,7 +37,7 @@ const Nav = () => {
 
 export default Nav;
 
-const navIconSrc = [
+const ICON_SRC = [
   { id: 1, src: "home.png" },
   { id: 2, src: "send.png" },
   { id: 3, src: "add.png" },
