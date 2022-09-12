@@ -6,7 +6,7 @@ function Nav() {
     <div className="navbar">
       <div className="nav-left">
         <img src="/images/Nav/logo.png" alt="icon" />
-        <p>Wesartgram</p>
+        <p>Westagram</p>
       </div>
       <div className="nav-center">
         <img src="/images/Nav/navsearch.png" alt="icon" />

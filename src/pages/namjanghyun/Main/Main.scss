@@ -1,0 +1,525 @@
+.containerWrapperMain {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+
+  // header {
+  //   width: 1300px;
+  //   margin: 0 auto;
+
+  //   nav {
+  //     width: 100%;
+  //     height: 60px;
+  //     padding: 12px 0;
+  //     display: flex;
+  //     justify-content: space-evenly;
+  //     background: #fff;
+
+  //     .logo {
+  //       width: 180px;
+  //       display: flex;
+  //       justify-content: space-between;
+
+  //       i {
+  //         font-size: 30px;
+  //       }
+
+  //       h1 {
+  //         width: 140px;
+  //         height: 25px;
+  //         padding: 2px 0 0;
+  //         line-height: 26px;
+  //         font-size: 23px;
+  //         font-family: "Lobster", cursive;
+  //       }
+  //     }
+
+  //     .searchBox {
+  //       width: 288px;
+  //       height: 36px;
+  //       margin: 0 auto;
+  //       padding: 10px 0;
+  //       color: #dadada;
+  //       text-align: center;
+  //       background: #fff;
+  //       border: 1px solid #aaa;
+  //       border-radius: 3px;
+
+  //       &::placeholder {
+  //         width: 288px;
+  //         height: 36px;
+  //         margin: 0 auto;
+  //         background: #fff;
+  //         border: 1px solid #333;
+  //       }
+  //     }
+
+  //     .navIconBox i {
+  //       padding: 5px 10px 0;
+  //       font-size: 26px;
+  //     }
+  //   }
+  // }
+
+  .navbar {
+    position: fixed;
+    background: #fff;
+    width: 100%;
+  }
+
+  .main {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 120px 0;
+    background: #fafafa;
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .mainWrap {
+      width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .feeds {
+      width: 840px;
+
+      article {
+        width: 100%;
+        margin: 0 0 30px 0;
+        float: right;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+
+        .topSection {
+          width: 100%;
+          height: 70px;
+          border-bottom: 1px solid #ddd;
+          background: #fff;
+          display: flex;
+          justify-content: space-between;
+
+          .profileInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .profileImgBox {
+              width: 60px;
+              height: 60px;
+              padding: 10px;
+
+              img {
+                width: 100%;
+                border-radius: 50%;
+                border: 2px solid red;
+                border-radius: 50%;
+              }
+            }
+
+            .profileTextBox {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+
+              span {
+                width: 100%;
+              }
+            }
+          }
+
+          .profileMore {
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+
+      .imageSection {
+        width: 838px;
+        height: 838px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .likeSection {
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .iconBoxWrap {
+          padding: 10px 10px;
+          background: transparent;
+
+          i {
+            font-size: 31px;
+            padding: 0 8px;
+          }
+        }
+
+        .iconBoxWrap1 .iconBox {
+          height: 100%;
+
+          i:nth-child(1) {
+            color: rgb(215, 85, 89);
+          }
+        }
+      }
+
+      .feedId {
+        width: 100%;
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        background: #fff;
+
+        img {
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+          border: 2px solid red;
+          border-radius: 50%;
+        }
+      }
+
+      .feedBox {
+        width: 100%;
+        padding: 5px 10px;
+        background: #fff;
+
+        li {
+          width: 100%;
+          margin: 10px 0;
+          display: flex;
+        }
+
+        .feedWrap {
+          width: 94%;
+          display: flex;
+
+          span {
+            padding: 0 2px;
+
+            &#feed {
+              max-width: 650px;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+
+            &#feedMore {
+              text-indent: 10px 1px 0px 300px;
+              color: #bbb;
+            }
+          }
+        }
+
+        .feedIconWrap {
+          span {
+            margin: 0 3px;
+          }
+
+          .heartIcon i {
+            color: black;
+          }
+
+          span.heartIconFull {
+            display: none;
+
+            i {
+              color: red;
+            }
+          }
+        }
+      }
+
+      .feedTimeBox {
+        width: 100%;
+        padding: 5px 10px;
+        background: #fff;
+
+        span {
+          color: #bbb;
+        }
+      }
+
+      .feedInputBox {
+        width: 100%;
+        margin: 0;
+        background: #fff;
+        position: relative;
+        border-top: 1px solid #ddd;
+
+        input {
+          width: 92%;
+          margin: 0;
+          padding: 10px 1%;
+          line-height: 1.5;
+          border: none;
+        }
+
+        button {
+          padding: 8px 10px;
+          color: cornflowerblue;
+          position: absolute;
+          top: 4px;
+          right: 5px;
+          border: none;
+          background: none;
+        }
+      }
+    }
+
+    .mainRight {
+      width: 370px;
+      height: auto;
+      background: transparent;
+
+      .userInfo {
+        width: 100%;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+
+        img {
+          width: 60px;
+          height: 60px;
+          margin: 0px 20px;
+          border: 2px solid transparent;
+          border-radius: 50%;
+        }
+
+        .userInfoText {
+          width: 50%;
+          padding: 0 30px 0 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+
+      .story {
+        width: 100%;
+        height: 250px;
+        margin: 0 0 30px;
+        padding: 20px 20px 0;
+        border: 1px solid #ddd;
+        border-radius: 7px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+          width: 100%;
+          padding-bottom: 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .infoWrap {
+          width: 100%;
+          overflow-y: auto;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+
+          &::-webkit-scrollbar {
+            display: none;
+
+            /* Chrome, Safari, Opera*/
+          }
+
+          .userInfo {
+            width: 100%;
+            margin: 5px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+
+            img {
+              width: 50px;
+              height: 50px;
+              margin: 0 15px 0 0px;
+              border: 2px solid red;
+              border-radius: 50%;
+            }
+
+            div {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+
+              span {
+                &:nth-child(1) {
+                  font-weight: 600;
+                }
+
+                &:nth-child(2) {
+                  color: #aaa;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .userRecommend {
+        width: 100%;
+        margin: 0 0 30px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 7px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: hidden;
+
+        .title {
+          width: 100%;
+          padding-bottom: 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .userInfo {
+          width: 100%;
+          margin: 5px 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: left;
+          align-items: center;
+
+          img {
+            width: 40px;
+            height: 40px;
+            margin: 0 15px 0 0px;
+            border: 2px solid red;
+            border-radius: 50%;
+          }
+
+          div {
+            width: 215px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            span {
+              &:nth-child(1) {
+                font-weight: 600;
+              }
+
+              &:nth-child(2) {
+                color: #aaa;
+              }
+            }
+          }
+
+          span:nth-child(3) {
+            color: cornflowerblue;
+          }
+        }
+      }
+
+      .westaInfo {
+        padding: 20px 10px;
+
+        ul {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: flex-start;
+
+          li {
+            padding: 0 15px 0 0;
+            line-height: 1.6;
+            color: #999;
+            font-size: 15px;
+          }
+        }
+
+        span {
+          color: #999;
+          font-size: 15px;
+          line-height: 1.5;
+          text-align: left;
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .containerWrapperMain {
+    // header {
+    //   width: 100%;
+
+    //   nav .searchBox {
+    //     display: none;
+    //   }
+    // }
+
+    .navbar {
+      width: 100%;
+
+      .nav-center {
+        display: none;
+      }
+
+      .nav-right {
+        min-width: 150px;
+
+        img {
+          width: 30px;
+        }
+      }
+    }
+
+    .main {
+      padding: 0 0 20px;
+
+      .mainWrap {
+        width: 98%;
+      }
+
+      .feeds {
+        width: 100%;
+
+        .imageSection {
+          width: 100%;
+          height: auto;
+        }
+
+        .feedBox .feedWrap {
+          width: 84%;
+
+          span#feed {
+            width: 160px;
+          }
+        }
+      }
+
+      .mainRight {
+        display: none;
+      }
+    }
+  }
+}
