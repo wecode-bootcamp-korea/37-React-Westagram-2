@@ -6,12 +6,14 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+
     img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
       border: 1px solid black;
     }
+
     .header-info {
       margin-left: 10px;
 
@@ -19,6 +21,7 @@
         font-weight: bold;
         margin-bottom: 5px;
       }
+
       .header-description {
         color: gray;
       }
@@ -37,6 +40,7 @@
       justify-content: space-between;
       padding: 10px;
       font-weight: bold;
+
       .story-name {
         color: gray;
       }
@@ -47,17 +51,20 @@
     border: 1px solid lightgrey;
     margin: 20px 0;
     background-color: white;
+
     .user-title {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px;
       font-weight: bold;
+
       .user-name {
         color: gray;
       }
     }
   }
+
   .aside-info-container {
     color: lightgrey;
     width: 230px;

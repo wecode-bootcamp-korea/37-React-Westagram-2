@@ -6,14 +6,17 @@
   justify-content: space-around;
   height: 80px;
   border-bottom: 1px solid lightgrey;
+
   img {
     width: 40px;
   }
+
   .nav-left {
     display: flex;
     align-items: center;
     height: 50px;
     font-size: 24px;
+
     p {
       display: flex;
       align-items: center;
@@ -24,16 +27,19 @@
       font-family: "Lobster", cursive;
     }
   }
+
   .nav-center {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+
     img {
       position: absolute;
       width: 15px;
       left: 70px;
     }
+
     input {
       height: 30px;
       width: 200px;
@@ -42,6 +48,7 @@
       color: lightgrey;
     }
   }
+
   .nav-right {
     img {
       margin: 0 10px;

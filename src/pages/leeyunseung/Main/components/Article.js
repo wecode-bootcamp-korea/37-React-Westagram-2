@@ -1,33 +1,40 @@
 import React, { useState } from "react";
 import Comment from "./Comment";
+import User from "../components/User";
 import "./Article.scss";
 
-function Article({ children }) {
+function Article({
+  articleNum,
+  mainImg,
+  userList,
+  commentList,
+  addCommentByArticleNum,
+}) {
   const [comment, setComment] = useState("");
-  const [commentList, setCommentList] = useState([]);
 
   const inputValue = (e) => {
     setComment(e.target.value);
   };
 
+  const addComment = () => {
+    addCommentByArticleNum(articleNum, comment);
+    setComment("");
+  };
+
   const handleClickInput = (e) => {
-    if (e.target.value.length > 0) {
-      setCommentList([...commentList, comment]);
-      setComment("");
-    }
+    if (e.target.value.length > 0) addComment();
   };
 
   const handleKeyPressInput = (e) => {
-    if (e.key === "Enter" && e.target.value.length > 0) {
-      setCommentList([...commentList, comment]);
-      setComment("");
-    }
+    if (e.key === "Enter" && e.target.value.length > 0) addComment();
   };
 
   return (
     <div className="article">
-      {children}
-      <div className="main-image" />
+      {userList.map(({ username, img, id }) => (
+        <User img={img} username={username} key={id} />
+      ))}
+      <img className="main-image" src={mainImg} alt="#" />
       <div className="icon-container">
         <img src="/images/Leeyunseung/redheart.png" alt="icon" />
         <img src="/images/Leeyunseung/chat.png" alt="icon" />
@@ -52,7 +59,6 @@ function Article({ children }) {
           value={comment}
           onChange={inputValue}
           className="commnet-input"
-          type="text"
           placeholder="댓글 달기..."
           onKeyPress={handleKeyPressInput}
         />

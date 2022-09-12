@@ -6,15 +6,13 @@
 
   .main-image {
     height: 700px;
-    background-image: url("./main.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    width: 698px;
   }
 
   .icon-container {
     display: flex;
     width: 600px;
+
     img {
       width: 30px;
       margin: 5px 10px;
@@ -36,13 +34,16 @@
       border: 1px solid lightgray;
     }
   }
+
   .comment-container {
     margin: 10px 10px;
   }
+
   .comment-input-container {
     position: relative;
     display: flex;
     align-items: center;
+
     .commnet-input {
       width: 100%;
       padding: 20px 10px;

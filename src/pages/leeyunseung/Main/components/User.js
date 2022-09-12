@@ -26,10 +26,28 @@ function User({
 
 export default User;
 
-export const mainUser = {
-  username: "yunseung_lee",
-  img: "/images/Leeyunseung/dog.png",
-};
+export const mainUser = [
+  {
+    id: 1,
+    username: "yunseung_lee",
+    img: "/images/Leeyunseung/dog.png",
+  },
+  {
+    id: 2,
+    username: "nanghyun_nam",
+    img: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDJfMTEg%2FMDAxNjU5Mzk5ODc1MTQ3.UY5cOYvg0Lz6PMzoMzwKOiqH56Xh069HxsNPy_i3u9Qg.M-33KjGoxDi2oT4lSVeirqL_jgu4KCDbjk4KZMtNtiYg.PNG.kbrs1219%2Fimage.png&type=sc960_832",
+  },
+  {
+    id: 3,
+    username: "hyerin_joo",
+    img: "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20220131_229%2F1643571094523aHDvv_JPEG%2F44706990252007561_1303432131.jpg&type=sc960_832",
+  },
+  {
+    id: 4,
+    username: "youngtae_park",
+    img: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MjFfMjgx%2FMDAxNjYxMDkyNjk2NjY1.9GyS5mqM2kVcjl_Nrqctiui4MVqF12mZAtL3V5rIXL8g.Ffgpbq_GF6KtecE-Fl8qBcU3_-efrNFLb6TW6XEmkw4g.JPEG.sinae1096%2FIMG_5803.jpg&type=sc960_832",
+  },
+];
 
 export const storyUserList = [
   {

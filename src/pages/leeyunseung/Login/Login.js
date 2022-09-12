@@ -5,18 +5,14 @@ import "./Login.scss";
 function LoginLee() {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({ email: "", password: "" });
-  const [loginButton, setloginButton] = useState(false);
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
-
-    inputValue.email.includes("@") && inputValue.password.length > 4
-      ? setloginButton(true)
-      : setloginButton(false);
   };
 
   const handleClickBtnSignIn = (e) => {
+    // ToDo why??
     e.preventDefault();
 
     fetch("http://10.58.5.155:3000/auth/signin", {
@@ -38,9 +34,8 @@ function LoginLee() {
       // .catch((error) => console.log(error))
       .then((data) => {
         localStorage.setItem("TOKEN", data.accessToken);
-        if (data.accessToken) {
-          navigate("../Main-lee");
-        }
+
+        navigate("../Main-lee");
       });
   };
 
@@ -57,7 +52,6 @@ function LoginLee() {
       }),
     }).then((response) => {
       if (response.ok === true) {
-        alert("회원가입 성공");
         return response.json();
       }
       throw new Error("에러 발생!");
@@ -67,35 +61,46 @@ function LoginLee() {
 
   return (
     <div className="login-wrapper">
-      <div>
-        <h1>Westargram</h1>
-        <input
-          placeholder="전화번호, 사용자 이름 또는 이메일"
-          type="text"
-          name="email"
-          onChange={handleChangeInput}
-        />
-        <input
-          placeholder="비밀번호"
-          type="password"
-          name="password"
-          onChange={handleChangeInput}
-        />
-        <button
-          type="button"
-          className={loginButton ? "on-button" : "off-button"}
-          onClick={handleClickBtnSignUp}
-        >
-          회원가입
-        </button>
-        <button
-          type="button"
-          className={loginButton ? "on-button" : "off-button"}
-          onClick={handleClickBtnSignIn}
-        >
-          로그인
-        </button>
-        <a href="www.naver.com">비밀번호를 잊으셨나요?</a>
+      <div className="tttt">
+        <div className="not-forgat-password">
+          <h1>Westargram</h1>
+          <input
+            placeholder="전화번호, 사용자 이름 또는 이메일"
+            name="email"
+            onChange={handleChangeInput}
+          />
+          <input
+            placeholder="비밀번호"
+            type="password"
+            name="password"
+            onChange={handleChangeInput}
+          />
+          <button
+            type="button"
+            className={
+              inputValue.email.includes("@") && inputValue.password.length > 4
+                ? "on-button"
+                : "off-button"
+            }
+            onClick={handleClickBtnSignUp}
+          >
+            회원가입
+          </button>
+          <button
+            type="button"
+            className={
+              inputValue.email.includes("@") && inputValue.password.length > 4
+                ? "on-button"
+                : "off-button"
+            }
+            onClick={handleClickBtnSignIn}
+          >
+            로그인
+          </button>
+        </div>
+        <div className="forgat-password">
+          <a href="www.naver.com">비밀번호를 잊으셨나요?</a>
+        </div>
       </div>
     </div>
   );
