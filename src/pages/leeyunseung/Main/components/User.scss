@@ -1,0 +1,38 @@
+.user-box {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 10px 0;
+
+  .user-img {
+    border-radius: 50%;
+    border: 1px solid lightgrey;
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+
+    .user-name {
+      font-weight: bold;
+    }
+
+    .desc {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 130px;
+      color: gray;
+    }
+  }
+
+  .follow {
+    margin-left: 20px;
+    color: deepskyblue;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

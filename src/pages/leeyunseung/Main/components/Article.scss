@@ -1,0 +1,66 @@
+.article {
+  width: 700px;
+  border: 1px solid lightgrey;
+  background-color: white;
+  margin-bottom: 30px;
+
+  .main-image {
+    height: 700px;
+    width: 698px;
+  }
+
+  .icon-container {
+    display: flex;
+    width: 600px;
+
+    img {
+      width: 30px;
+      margin: 5px 10px;
+    }
+
+    .save-icon {
+      margin-left: 500px;
+    }
+  }
+
+  .like-icon-box {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 20px;
+      margin: 10px 10px;
+      border-radius: 50%;
+      border: 1px solid lightgray;
+    }
+  }
+
+  .comment-container {
+    margin: 10px 10px;
+  }
+
+  .comment-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .commnet-input {
+      width: 100%;
+      padding: 20px 10px;
+      border: none;
+      border-top: 1px solid lightgrey;
+      font-size: 16px;
+    }
+
+    .commnet-button {
+      position: absolute;
+      right: 10px;
+      width: 40px;
+      height: 30px;
+      background-color: white;
+      border: none;
+      font-size: 16px;
+      color: skyblue;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "/src/styles/variables.scss";
+
+.main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(249, 249, 249);
+
+  .feeds {
+    width: 730px;
+    height: 800px;
+    margin-top: 50px;
+  }
+}

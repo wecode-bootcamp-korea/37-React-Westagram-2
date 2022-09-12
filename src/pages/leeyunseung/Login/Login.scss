@@ -1,0 +1,67 @@
+@import "/src/styles/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+.login-wrapper {
+  @include flexCenter;
+  height: 100vh;
+  background-color: #f9f9f9;
+
+  .tttt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 400px;
+    border: 1px solid lightgray;
+    background-color: white;
+    font-family: "Lobster", cursive;
+  }
+
+  .not-forgat-password {
+    @include flexCenter;
+    flex-direction: column;
+
+    h1 {
+      font-size: 48px;
+      margin: 40px 0;
+    }
+
+    input {
+      width: 300px;
+      margin: 10px 0;
+      padding: 20px 10px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      margin: 10px;
+      padding: 20px 0;
+      font-size: 16px;
+      color: white;
+    }
+  }
+
+  .forgat-password {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    a {
+      margin-top: 180px;
+      text-decoration: none;
+    }
+  }
+}
+
+.on-button {
+  background-color: #0e71e1;
+}
+
+.off-button {
+  background-color: lightblue;
+}

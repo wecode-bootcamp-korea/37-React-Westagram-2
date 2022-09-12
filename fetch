@@ -1,0 +1,9 @@
+fetch 메서드를 호출할 때, 첫 번째 인자로 전달한 API 주소에 정보를 달라고 요청을 합니다. 
+그리고 응답을 받습니다. 아래의 형태가 fetch 메서드의 기본 구조입니다. fetch 메서드를 호출할 때, 
+인자를 2개를 전달할 수 있습니다. 첫 번째 인자 자리에는 데이터를 요청할 API 주소를 필수로 넣습니다. 
+두 번째 인자는 요청의 옵션 값들로 필요에 따라 객체 형태로 넣을 수 있는데, method, headers, body, mode, 
+credentials, omit, same-origin, include, cache, redirect, referrer, referrerPolicy, 
+integrity, keepalive, signal 등의 key와 각각 해당하는 value를 넣을 수 있습니다. 여기서 중요한 건, 
+클라이언트의 입장에서 서버에게 요청하는 것입니다. 어디서 요청하고, 어디서 응답받는지 방향이 혼동되면 개념 정립에 
+좀 더 많은 시간이 할애될 수 있습니다.
+
