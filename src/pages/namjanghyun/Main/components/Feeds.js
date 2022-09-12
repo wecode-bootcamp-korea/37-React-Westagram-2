@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Comment from "./Comment";
 
 function Feeds(props) {
-  // console.log(props.feed.src);
   const [commentInputValue, setCommentValue] = useState("");
   const [commentArray, setCommentArray] = useState([]);
 
@@ -10,15 +9,17 @@ function Feeds(props) {
     setCommentValue("");
   };
 
+  //console.log(commentInputValue.length);
   const saveComment = (event) => {
-    // console.log(event.target.value);
     setCommentValue(event.target.value);
-    // console.log(typeof setCommentValue);
   };
 
   const createArray = (event) => {
     event.preventDefault();
-    setCommentArray((prevList) => [...prevList, commentInputValue]);
+    if (commentInputValue.length > 0) {
+      // setCommentArray((prevList) => [...prevList, commentInputValue]);
+      setCommentArray(commentArray.concat(commentInputValue));
+    }
     clear();
   };
 

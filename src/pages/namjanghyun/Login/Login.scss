@@ -30,15 +30,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.containerWrapper::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.containerWrapperLogin {
   .loginBox {
     width: 660px;
     height: auto;
